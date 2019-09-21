@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hat.obj-c3a39e959843bc0aee246575728140ed.mesh"
+
+[deps]
+
+files=[ "res://.import/hat.obj-c3a39e959843bc0aee246575728140ed.mesh" ]
+
+source_file="res://Assets/Character/hat.obj"
+dest_files=[ "res://.import/hat.obj-c3a39e959843bc0aee246575728140ed.mesh", "res://.import/hat.obj-c3a39e959843bc0aee246575728140ed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
