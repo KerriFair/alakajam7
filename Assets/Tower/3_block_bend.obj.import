@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/3_block_bend.obj-812722c0428111033ab864edca78613f.mesh"
+
+[deps]
+
+files=[ "res://.import/3_block_bend.obj-812722c0428111033ab864edca78613f.mesh" ]
+
+source_file="res://Assets/Tower/3_block_bend.obj"
+dest_files=[ "res://.import/3_block_bend.obj-812722c0428111033ab864edca78613f.mesh", "res://.import/3_block_bend.obj-812722c0428111033ab864edca78613f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
