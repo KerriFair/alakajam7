@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Tower/3_block_bend.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Tower/3_block_line.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Tower/tower_platform.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( 1, 4, 1, -1, 4, 1, 1, 4, -1, -1, 4, -1, 1, 2, -3, -1, 2, -3, 1, 0, -3, -1, 0, -3, -1, 2, 1, -1, 0, 1, -1, 2, -1, -1, 0, -1, -1, 2, -3, -1, 0, -3, -1, 4, 1, -1, 4, -1, 1, 2, -1, 1, 0, -1, 1, 2, 1, 1, 0, 1, 1, 0, -3, 1, 2, -3, 1, 4, -1, 1, 4, 1, 1, 0, 1, -1, 0, 1, 1, 2, 1, -1, 2, 1, -1, 4, -1, -1, 2, -1, 1, 4, -1, 1, 2, -1, 1, 4, 1, -1, 4, 1, 1, 0, -1, -1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -3, 1, 0, -3, 1, 2, -3, 1, 2, -1, -1, 2, -3, -1, 2, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 1, 0, 3, -1, 0, 3, 1, 2, 3, -1, 2, 3, 1, 2, -3, -1, 2, -3, 1, 0, -3, -1, 0, -3, -1, 2, 1, -1, 0, 1, -1, 2, -1, -1, 0, -1, -1, 0, 3, -1, 2, 3, -1, 2, -3, -1, 0, -3, 1, 2, -1, 1, 0, -1, 1, 2, 1, 1, 0, 1, 1, 0, -3, 1, 2, -3, 1, 2, 3, 1, 0, 3, 1, 0, -1, -1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -3, 1, 0, -3, 1, 2, 1, -1, 2, 1, 1, 2, -1, -1, 2, -1, -1, 2, 3, 1, 2, 3, 1, 0, 3, -1, 0, 3, 1, 2, -3, -1, 2, -3 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 1, 0.2, -7, -1, 0.2, -7, 1, 0, -7, -1, 0, -7, 1, 0, 7, -1, 0, 7, 1, 0.2, 7, -1, 0.2, 7, -1, 0.2, 1, -1, 0, 1, -1, 0.2, -1, -1, 0, -1, -1, 0, 3, -1, 0.2, 3, -1, 0.2, -3, -1, 0, -3, 1, 0.2, -1, 1, 0, -1, 1, 0.2, 1, 1, 0, 1, 1, 0, -3, 1, 0.2, -3, 1, 0.2, 3, 1, 0, 3, -1, 0, 5, -1, 0.2, 5, 1, 0.2, 5, 1, 0, 5, -1, 0.2, -5, -1, 0, -5, 1, 0, -5, 1, 0.2, -5, -1, 0.2, -7, -1, 0, -7, 1, 0, -7, 1, 0.2, -7, -1, 0, 7, -1, 0.2, 7, 1, 0.2, 7, 1, 0, 7, 1, 0, -1, -1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -3, 1, 0, -3, 1, 0.2, 1, -1, 0.2, 1, 1, 0.2, -1, -1, 0.2, -1, -1, 0.2, 3, 1, 0.2, 3, 1, 0, 3, -1, 0, 3, 1, 0.2, -3, -1, 0.2, -3, -1, 0.2, 5, 1, 0.2, 5, 1, 0, 5, -1, 0, 5, -1, 0, -5, 1, 0, -5, 1, 0.2, -5, -1, 0.2, -5, -1, 0, -7, 1, 0, -7, 1, 0.2, -7, -1, 0.2, -7, -1, 0.2, 7, 1, 0.2, 7, 1, 0, 7, -1, 0, 7 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Bent_Block" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -1.50996e-007, 0, 1, 0, 1.50996e-007, 0, -1, -1, 0, 1 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Bent_Block"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Bent_Block/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Straight_Block" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -1, 3, 2 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Straight_Block"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Straight_Block/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+shape = SubResource( 3 )

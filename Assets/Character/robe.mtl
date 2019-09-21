@@ -1,4 +1,13 @@
 # Exported from Wings 3D 2.2.4
+newmtl ACloth
+Ns 0.0
+d 1.0
+illum 2
+Kd 0.9490196078431372 0.3254901960784314 0.42745098039215684
+Ka 0.0 0.0 0.0
+Ks 0.1 0.1 0.1
+Ke 0.0 0.0 0.0
+
 newmtl default
 Ns 19.999999999999996
 d 1.0
