@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wizardrobe.obj-6ad4d96512892e39a29f5f1a0c85e5bb.mesh"
+
+[deps]
+
+files=[ "res://.import/wizardrobe.obj-6ad4d96512892e39a29f5f1a0c85e5bb.mesh" ]
+
+source_file="res://Assets/Character/wizardrobe.obj"
+dest_files=[ "res://.import/wizardrobe.obj-6ad4d96512892e39a29f5f1a0c85e5bb.mesh", "res://.import/wizardrobe.obj-6ad4d96512892e39a29f5f1a0c85e5bb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

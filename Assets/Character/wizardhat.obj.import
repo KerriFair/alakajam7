@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wizardhat.obj-8a38d7ae7b4185b2c7cfeb51206258e2.mesh"
+
+[deps]
+
+files=[ "res://.import/wizardhat.obj-8a38d7ae7b4185b2c7cfeb51206258e2.mesh" ]
+
+source_file="res://Assets/Character/wizardhat.obj"
+dest_files=[ "res://.import/wizardhat.obj-8a38d7ae7b4185b2c7cfeb51206258e2.mesh", "res://.import/wizardhat.obj-8a38d7ae7b4185b2c7cfeb51206258e2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

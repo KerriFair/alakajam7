@@ -15,4 +15,4 @@ dest_files=[ "res://.import/robe.obj-44fe68186fcc6022a452b73eb2b6c99f.mesh", "re
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
-optimize_mesh=true
+optimize_mesh=false

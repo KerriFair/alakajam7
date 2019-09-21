@@ -4,12 +4,12 @@
 radiance_size = 2
 sky_top_color = Color( 0.211765, 0.0431373, 0.266667, 1 )
 sky_horizon_color = Color( 0.94902, 0.317647, 0.12549, 1 )
-sky_curve = 0.0706125
+sky_curve = 0.173868
 ground_bottom_color = Color( 0, 0, 0, 1 )
 ground_horizon_color = Color( 0.94902, 0.317647, 0.12549, 1 )
 ground_curve = 0.226275
 sun_color = Color( 1, 0.411765, 0.333333, 1 )
-sun_latitude = -1.36
+sun_latitude = -22.05
 sun_angle_min = 20.43
 sun_angle_max = 141.17
 sun_curve = 0.0287175
