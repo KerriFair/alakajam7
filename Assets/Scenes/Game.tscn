@@ -1,16 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
 [ext_resource path="res://Assets/Floor/lava.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Misc/Danger_Sky.tres" type="Environment" id=4]
-[ext_resource path="res://Assets/Character/robe.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://Assets/Character/cloth.material" type="Material" id=6]
-[ext_resource path="res://Assets/Character/belt.material" type="Material" id=7]
-[ext_resource path="res://Assets/Character/buckle.material" type="Material" id=8]
-[ext_resource path="res://Assets/Character/trim.material" type="Material" id=9]
-[ext_resource path="res://Assets/Tower/tower_meshes.meshlib" type="MeshLibrary" id=10]
-[ext_resource path="res://Assets/Character/hat.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Assets/Tower/tower_meshes.meshlib" type="MeshLibrary" id=5]
+[ext_resource path="res://Assets/Character/hat.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/Character/robe.obj" type="ArrayMesh" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 subdivide_width = 32
@@ -19,13 +15,13 @@ subdivide_depth = 32
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Lava" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 150, 0, 0, 0, 74.8601, -9.15728, 0, 4.57864, 149.72, 0, 15.75, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MeshInstance"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Lava"]
 stream = ExtResource( 3 )
 autoplay = true
 
@@ -33,51 +29,53 @@ autoplay = true
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 21 )
 environment = ExtResource( 4 )
 doppler_tracking = 1
 current = true
+fov = 45.0
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 9 )
 light_energy = 8.19
 
-[node name="Robe" type="SoftBody" parent="."]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 1, 18, -2 )
-mesh = ExtResource( 5 )
-material/0 = ExtResource( 6 )
-material/1 = ExtResource( 7 )
-material/2 = ExtResource( 8 )
-material/3 = ExtResource( 9 )
-linear_stiffness = 0.1
-areaAngular_stiffness = 0.3
-volume_stiffness = 0.7
-pressure_coefficient = 0.1
-damping_coefficient = 0.0
-
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 18, 3 )
-mesh_library = ExtResource( 10 )
+mesh_library = ExtResource( 5 )
 cell_octant_size = 2
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PoolIntArray( 0, 0, 536870914, 2, 0, 536870915, -131072, 0, 536870914, -131071, 0, 536870913, -131070, 0, 3, -65535, 2, 0, 1, 3, 0, 65537, 3, 0, 131073, 3, 0, -131071, 3, 0, 65537, 65533, 655360, -131071, 65533, 655360, 1, 65534, 1, -65535, 65535, 1 )
+"cells": PoolIntArray( 0, 0, 2, 2, 0, 3, -131072, 0, 2, -131071, 0, 536870913, -131070, 0, 3, -65535, 2, 0, 1, 3, 0, 65537, 3, 0, 131073, 3, 0, -131071, 3, 0, 65537, 65533, 655360, -131071, 65533, 655360, 1, 65534, 1, -65535, 65535, 1 )
 }
 __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 0, 0 )
 }
 
-[node name="Hat" type="SoftBody" parent="."]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 1, 18, -2 )
-mesh = ExtResource( 11 )
-material/0 = ExtResource( 6 )
-material/1 = ExtResource( 7 )
-material/2 = ExtResource( 8 )
-material/3 = ExtResource( 9 )
-linear_stiffness = 0.1
-areaAngular_stiffness = 0.3
-volume_stiffness = 0.7
-pressure_coefficient = 0.1
-damping_coefficient = 0.0
+[node name="Hat" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 2.5, 18, 0 )
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="Robe" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 2.5, 18, 0 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="Soft Robe" type="SoftBody" parent="."]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -2.5, 18, 0 )
+mesh = ExtResource( 7 )
+material/0 = null
+total_mass = 3.0
+linear_stiffness = 0.2
+areaAngular_stiffness = 0.2
+volume_stiffness = 0.2
+
+[node name="soft Hat" type="SoftBody" parent="."]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -2.5, 18, 0 )
+mesh = ExtResource( 6 )
+material/0 = null
+linear_stiffness = 0.2
+areaAngular_stiffness = 0.2
+volume_stiffness = 0.2
