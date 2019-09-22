@@ -289,7 +289,7 @@ near = 0.01
 far = 2807.8
 
 [node name="Wizard" parent="." instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -1.75, 3.25, 0 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -3.75, 3.25, 0 )
 
 [node name="Control" type="Control" parent="."]
 editor/display_folded = true
@@ -775,12 +775,10 @@ flat = true
 stream = ExtResource( 11 )
 
 [node name="BaseTower" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Floor" type="MeshInstance" parent="BaseTower"]
 editor/display_folded = true
-transform = Transform( -1, 0, -1.50996e-007, 0, 1, 0, 1.50996e-007, 0, -1, 0, 0, 0 )
-visible = false
+transform = Transform( -2.8213e-007, 0, 1, 0, 1, 0, -1, 0, -2.8213e-007, -3, 2, -1 )
 mesh = ExtResource( 12 )
 material/0 = null
 
@@ -790,8 +788,7 @@ material/0 = null
 shape = SubResource( 38 )
 
 [node name="Back" type="MeshInstance" parent="BaseTower"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
-visible = false
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 1, -1 )
 mesh = ExtResource( 13 )
 material/0 = null
 
@@ -816,48 +813,6 @@ material/0 = null
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, 1 )
 shape = SubResource( 40 )
 
-[node name="Bent_Block2" type="RigidBody" parent="BaseTower"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5 )
-mode = 1
-axis_lock_linear_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Bent_Block2"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 1, -1 )
-shape = SubResource( 39 )
-
-[node name="Bent_Block" type="MeshInstance" parent="BaseTower/Bent_Block2"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
-mesh = ExtResource( 14 )
-material/0 = null
-
-[node name="CollisionShape2" type="CollisionShape" parent="BaseTower/Bent_Block2"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, 1 )
-shape = SubResource( 40 )
-
-[node name="Bent_Block3" type="RigidBody" parent="BaseTower"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -7 )
-mode = 1
-axis_lock_linear_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Bent_Block3"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 1, -1 )
-shape = SubResource( 39 )
-
-[node name="Bent_Block" type="MeshInstance" parent="BaseTower/Bent_Block3"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
-mesh = ExtResource( 14 )
-material/0 = null
-
-[node name="CollisionShape2" type="CollisionShape" parent="BaseTower/Bent_Block3"]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, 1 )
-shape = SubResource( 40 )
-
 [node name="Straight_Block" type="RigidBody" parent="BaseTower"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5 )
@@ -877,7 +832,7 @@ material/0 = null
 
 [node name="Straight_Block3" type="RigidBody" parent="BaseTower"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 8, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5 )
 mode = 1
 axis_lock_linear_x = true
 axis_lock_angular_y = true
@@ -894,7 +849,7 @@ material/0 = null
 
 [node name="Straight_Block4" type="RigidBody" parent="BaseTower"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 10, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
 mode = 1
 axis_lock_linear_x = true
 axis_lock_angular_y = true

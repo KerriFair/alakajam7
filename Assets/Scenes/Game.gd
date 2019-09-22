@@ -1,19 +1,29 @@
 extends Node
 
 var blocks = preload("res://Assets/Tower/tower_blocks.tscn").instance()
+var wizard
+var camera
+var occupancy_grid = []
 var playing = false
 var clicking = false
 var should_lock_block = false
 var block_is_free = false
 var new_block
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	camera = get_node("Game Camera")
+	wizard = get_node("Wizard")
+	
 	var play_button = find_node("Play Button")
 	play_button.connect("pressed", self, "_on_Game_Started")
 	
 	var end_button = find_node("Main Menu Button")
 	end_button.connect("pressed", self, "_on_Game_Ended")
+	
+	for y in range(100):
+    	occupancy_grid.append([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -64,8 +74,21 @@ func _spawn_block():
 	add_child(new_block)
 	new_block.set_identity()
 	new_block.global_translate(Vector3(0, 20, rand_range(-6, 6)))
+	new_block.rotate_x(rand_range(-2, 2))
 	new_block.connect("sleeping_state_changed", self, "_block_is_sleeping")
 	block_is_free = true
+
+func _spawn_floor(y):
+	var floor_block = blocks.get_node("Floor").duplicate()
+	
+	add_child(floor_block)
+	floor_block.set_identity()
+	floor_block.global_translate(Vector3(0, y, 0))
+	
+
+	var y_dif = y - wizard.transform.origin.y
+	wizard.global_translate(Vector3(0, y_dif, 0))
+	camera.global_translate(Vector3(0, y_dif, 0))
 
 func _physics_process(delta):
 	
@@ -77,10 +100,42 @@ func _physics_process(delta):
 	if should_lock_block:
 		should_lock_block = false
 		block_is_free = false
-
+	
 		var rotation = Basis(Vector3(1,0,0), 1.5708 * floor((new_block.rotation_degrees.x + 45)/90))
 		var y = int(new_block.transform.origin.y + .5) + int(new_block.transform.origin.y + .5) % 2 - 1
 		var z = int(new_block.transform.origin.z + .5) + int(new_block.transform.origin.z + .5) % 2
 		
 		new_block.set_mode(RigidBody.MODE_STATIC)
 		new_block.set_transform(Transform(rotation, Vector3(0, y, z)))
+		
+		y = floor(y / 2)
+		z = floor(z / 2) + 10
+		
+		occupancy_grid[y][z] = 1
+		
+		var degrees = new_block.rotation_degrees.x
+
+		if new_block.name.find("Straight_Block") != -1:
+			if abs(degrees) < 10 or abs(degrees) > 170:
+				occupancy_grid[y][z+1] = 1
+				occupancy_grid[y][z-1] = 1
+			else:
+				occupancy_grid[y+1][z] = 1
+				occupancy_grid[y-1][z] = 1
+		else:
+			if degrees > -10  and degrees < 10:
+				occupancy_grid[y+1][z] = 1
+				occupancy_grid[y][z+1] = 1
+			elif degrees > 80  and degrees < 100:
+				occupancy_grid[y][z+1] = 1
+				occupancy_grid[y-1][z] = 1
+			elif degrees > -100  and degrees < -80:
+				occupancy_grid[y+1][z] = 1
+				occupancy_grid[y][z-1] = 1
+			else:
+				occupancy_grid[y-1][z] = 1
+				occupancy_grid[y][z-1] = 1
+
+		if occupancy_grid[y].count(1) > 5:
+			_spawn_floor(new_block.transform.origin.y)
+		
