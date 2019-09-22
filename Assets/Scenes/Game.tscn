@@ -161,7 +161,7 @@ is_hemisphere = true
 
 [sub_resource type="StyleBoxEmpty" id=16]
 
-[sub_resource type="GDScript" id=32]
+[sub_resource type="GDScript" id=17]
 script/source = "extends Button
 
 # Declare member variables here. Examples:
@@ -176,8 +176,6 @@ func _ready():
 #func _process(delta):
 #	pass
 "
-
-[sub_resource type="StyleBoxEmpty" id=17]
 
 [sub_resource type="StyleBoxEmpty" id=18]
 
@@ -205,7 +203,9 @@ func _ready():
 
 [sub_resource type="StyleBoxEmpty" id=30]
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxEmpty" id=31]
+
+[sub_resource type="StyleBoxFlat" id=32]
 bg_color = Color( 0, 0, 0, 0.384314 )
 
 [sub_resource type="StyleBoxEmpty" id=33]
@@ -278,7 +278,7 @@ cell_octant_size = 2
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PoolIntArray( 1, 0, 1441795, 65535, 0, 1611661314, -131072, 0, 1048577, -131071, 0, 1441795, -65537, 0, 1048578, 131072, 1, 1179648, -65536, 2, 1441792, -131072, 3, 538312704, -131072, 65533, 1048576, 0, 65534, 1441792, 0, 65535, 1048576, -65536, 65535, 1441793 )
+"cells": PoolIntArray( 1, 0, 1441795, 65535, 0, 1048578, -131072, 0, 1048577, -131071, 0, 1441795, -65537, 0, 537919490, 131072, 1, 1179648, -65536, 2, 1441792, -131072, 3, 1441792, -131072, 65533, 1048576, 0, 65534, 1441792, 0, 65535, 1048576, -65536, 65535, 1441793 )
 }
 __meta__ = {
 "_editor_clip_": 0,
@@ -294,7 +294,6 @@ margin_bottom = 600.0
 script = ExtResource( 8 )
 
 [node name="Main Menu" type="VBoxContainer" parent="Control"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -335,7 +334,7 @@ custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
 custom_colors/font_color_pressed = Color( 0.458824, 0.180392, 0.227451, 1 )
 text = "PLAY"
 flat = true
-script = SubResource( 32 )
+script = SubResource( 17 )
 
 [node name="Options Button" type="Button" parent="Control/Main Menu"]
 margin_top = 277.0
@@ -345,9 +344,9 @@ focus_neighbour_top = NodePath("../Play Button")
 focus_neighbour_bottom = NodePath("../Credits Button")
 focus_next = NodePath("../Credits Button")
 focus_previous = NodePath("../Play Button")
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 18 )
-custom_styles/focus = SubResource( 19 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/focus = SubResource( 20 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -364,9 +363,9 @@ focus_neighbour_top = NodePath("../Options Button")
 focus_neighbour_bottom = NodePath("../Exit Button")
 focus_next = NodePath("../Exit Button")
 focus_previous = NodePath("../Options Button")
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/focus = SubResource( 22 )
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/focus = SubResource( 23 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -383,9 +382,9 @@ focus_neighbour_top = NodePath("../Credits Button")
 focus_neighbour_bottom = NodePath("../Play Button")
 focus_next = NodePath("../Play Button")
 focus_previous = NodePath(".")
-custom_styles/hover = SubResource( 23 )
-custom_styles/pressed = SubResource( 24 )
-custom_styles/focus = SubResource( 25 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -502,9 +501,9 @@ dragger_visibility = 2
 margin_top = 489.0
 margin_right = 400.0
 margin_bottom = 545.0
-custom_styles/hover = SubResource( 23 )
-custom_styles/pressed = SubResource( 24 )
-custom_styles/focus = SubResource( 25 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -514,6 +513,7 @@ text = "BACK"
 flat = true
 
 [node name="Options Menu" type="VBoxContainer" parent="Control"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -558,11 +558,11 @@ focus_neighbour_top = NodePath("../../Options Back Button")
 focus_neighbour_bottom = NodePath("../../Borderless Container/Borderless Toggle")
 focus_next = NodePath("../../Borderless Container/Borderless Toggle")
 focus_previous = NodePath("../../Options Back Button")
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/disabled = SubResource( 29 )
-custom_styles/normal = SubResource( 30 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -594,11 +594,11 @@ focus_neighbour_top = NodePath("../../Fullscreen Container/Fullscreen Toggle")
 focus_neighbour_bottom = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_next = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_previous = NodePath("../../Fullscreen Container/Fullscreen Toggle")
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/disabled = SubResource( 29 )
-custom_styles/normal = SubResource( 30 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -630,11 +630,11 @@ focus_neighbour_top = NodePath("../../Borderless Container/Borderless Toggle")
 focus_neighbour_bottom = NodePath("../../Volume Container/Volume Button")
 focus_next = NodePath("../../Volume Container/Volume Button")
 focus_previous = NodePath("../../Borderless Container/Borderless Toggle")
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/disabled = SubResource( 29 )
-custom_styles/normal = SubResource( 30 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -666,11 +666,11 @@ focus_neighbour_top = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_neighbour_bottom = NodePath("../../Options Back Button")
 focus_next = NodePath("../../Options Back Button")
 focus_previous = NodePath("../../V-Sync Container/V-Sync Toggle")
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/disabled = SubResource( 29 )
-custom_styles/normal = SubResource( 30 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -688,9 +688,9 @@ focus_neighbour_top = NodePath("../Volume Container/Volume Button")
 focus_neighbour_bottom = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_next = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_previous = NodePath("../Volume Container/Volume Button")
-custom_styles/hover = SubResource( 23 )
-custom_styles/pressed = SubResource( 24 )
-custom_styles/focus = SubResource( 25 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -704,7 +704,7 @@ pause_mode = 2
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_styles/panel = SubResource( 31 )
+custom_styles/panel = SubResource( 32 )
 
 [node name="Pause Menu" type="VBoxContainer" parent="Control/Pause Panel"]
 margin_right = 1024.0
