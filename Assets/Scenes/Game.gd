@@ -9,6 +9,7 @@ var clicking = false
 var should_lock_block = false
 var block_is_free = false
 var new_block
+var at_floor = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -84,7 +85,6 @@ func _spawn_floor(y):
 	add_child(floor_block)
 	floor_block.set_identity()
 	floor_block.global_translate(Vector3(0, y, 0))
-	
 
 	var y_dif = y - wizard.transform.origin.y
 	wizard.global_translate(Vector3(0, y_dif, 0))
@@ -136,6 +136,13 @@ func _physics_process(delta):
 				occupancy_grid[y-1][z] = 1
 				occupancy_grid[y][z-1] = 1
 
-		if occupancy_grid[y].count(1) > 5:
+		if y-1 > at_floor and occupancy_grid[y-1].count(1) > 5 and int(y-1)%3 == 0:
 			_spawn_floor(new_block.transform.origin.y)
+			at_floor = y - 1
+		if y > at_floor and occupancy_grid[y].count(1) > 5 and int(y)%3 == 0:
+			_spawn_floor(new_block.transform.origin.y)
+			at_floor = y
+		if y+1 > at_floor and occupancy_grid[y+1].count(1) > 5 and int(y+1)%3 == 0:
+			_spawn_floor(new_block.transform.origin.y)
+			at_floor = y + 1
 		
