@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Sitting.dae-e17e3d3bdd14b9e232149508ea551ac7.scn"
+path="res://.import/Sitting-loop.dae-2d0a94bc6924101eec3214a3c54001d1.scn"
 
 [deps]
 
-source_file="res://Assets/Character/Animations/Sitting.dae"
-dest_files=[ "res://.import/Sitting.dae-e17e3d3bdd14b9e232149508ea551ac7.scn" ]
+source_file="res://Assets/Character/Animations/Sitting-loop.dae"
+dest_files=[ "res://.import/Sitting-loop.dae-2d0a94bc6924101eec3214a3c54001d1.scn" ]
 
 [params]
 

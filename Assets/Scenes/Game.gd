@@ -20,19 +20,16 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("game_pause"):
 		if playing == true:
-			playing = false
 			find_node("Pause Panel").show()
 			find_node("Resume Button").grab_focus();
 			get_tree().paused = true
-		else:
-			playing = true
-			find_node("Pause Panel").hide()
-			get_tree().paused = false	
 
 func _on_Game_Started():
 	print("Game started!")
+	find_node("Game Camera").current = true
 	playing = true
 
 func _on_Game_Ended():
 	print("Gamed!")
+	find_node("Menu Camera").current = true
 	playing = false

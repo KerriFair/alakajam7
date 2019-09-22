@@ -1,49 +1,112 @@
 [gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
-[ext_resource path="res://Assets/Floor/lava.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Misc/stars.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Misc/Danger_Sky.tres" type="Environment" id=5]
-[ext_resource path="res://Assets/Tower/tower_meshes.meshlib" type="MeshLibrary" id=6]
-[ext_resource path="res://Assets/Character/Animations/Animations.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Scenes/Control.gd" type="Script" id=8]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Title.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Bold.tres" type="DynamicFont" id=10]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Options.tres" type="DynamicFont" id=11]
-[ext_resource path="res://Assets/Music/Tower_Menu.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Tower/tower_meshes.meshlib" type="MeshLibrary" id=2]
+[ext_resource path="res://Assets/Scenes/Control.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Title.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Bold.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Options.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Music/Tower_Menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Character/Animations/Animations.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Misc/Danger_Sky.tres" type="Environment" id=9]
+[ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=10]
+[ext_resource path="res://Assets/Floor/lava.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Misc/stars.png" type="Texture" id=12]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Button
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.grab_focus()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0, 0, 0.384314 )
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="PlaneMesh" id=25]
 subdivide_width = 32
 subdivide_depth = 32
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=2]
+[sub_resource type="VisualShaderNodeScalarConstant" id=26]
 constant = 0.33
 
-[sub_resource type="VisualShaderNodeInput" id=3]
+[sub_resource type="VisualShaderNodeInput" id=27]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeTexture" id=4]
-texture = ExtResource( 4 )
+[sub_resource type="VisualShaderNodeTexture" id=28]
+texture = ExtResource( 12 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=5]
+[sub_resource type="VisualShaderNodeVectorOp" id=29]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 5, 5, 5 ) ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeColorConstant" id=6]
+[sub_resource type="VisualShaderNodeColorConstant" id=30]
 
-[sub_resource type="VisualShaderNodeInput" id=7]
+[sub_resource type="VisualShaderNodeInput" id=31]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeVectorOp" id=8]
+[sub_resource type="VisualShaderNodeVectorOp" id=32]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=9]
+[sub_resource type="VisualShaderNodeScalarOp" id=33]
 default_input_values = [ 0, 0.0, 1, 0.0025 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=10]
+[sub_resource type="VisualShaderNodeVectorCompose" id=34]
 
-[sub_resource type="VisualShader" id=11]
+[sub_resource type="VisualShader" id=35]
 code = "shader_type spatial;
 render_mode blend_add, depth_draw_never, diffuse_burley, specular_phong, unshaded, skip_vertex_transform, world_vertex_coords, ensure_correct_normals, shadows_disabled, ambient_light_disabled, vertex_lighting;
 
@@ -125,175 +188,60 @@ flags/unshaded = true
 flags/vertex_lighting = true
 flags/world_vertex_coords = true
 nodes/fragment/0/position = Vector2( 380, 180 )
-nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/node = SubResource( 27 )
 nodes/fragment/2/position = Vector2( -380, 180 )
-nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/node = SubResource( 28 )
 nodes/fragment/3/position = Vector2( 200, 40 )
-nodes/fragment/4/node = SubResource( 5 )
+nodes/fragment/4/node = SubResource( 29 )
 nodes/fragment/4/position = Vector2( -220, 140 )
-nodes/fragment/5/node = SubResource( 6 )
+nodes/fragment/5/node = SubResource( 30 )
 nodes/fragment/5/position = Vector2( 220, 340 )
-nodes/fragment/6/node = SubResource( 7 )
+nodes/fragment/6/node = SubResource( 31 )
 nodes/fragment/6/position = Vector2( -600, 260 )
-nodes/fragment/7/node = SubResource( 8 )
+nodes/fragment/7/node = SubResource( 32 )
 nodes/fragment/7/position = Vector2( -40, 200 )
-nodes/fragment/8/node = SubResource( 9 )
+nodes/fragment/8/node = SubResource( 33 )
 nodes/fragment/8/position = Vector2( -420, 260 )
-nodes/fragment/9/node = SubResource( 10 )
+nodes/fragment/9/node = SubResource( 34 )
 nodes/fragment/9/position = Vector2( -240, 260 )
-nodes/fragment/10/node = SubResource( 2 )
+nodes/fragment/10/node = SubResource( 26 )
 nodes/fragment/10/position = Vector2( 180, 260 )
 nodes/fragment/connections = PoolIntArray( 5, 0, 0, 5, 4, 0, 7, 0, 6, 0, 8, 0, 9, 0, 7, 1, 3, 0, 0, 0, 7, 0, 3, 0, 2, 0, 4, 0, 8, 0, 9, 0, 8, 0, 9, 2, 10, 0, 0, 1 )
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=36]
+shader = SubResource( 35 )
 
-[sub_resource type="SphereMesh" id=13]
-material = SubResource( 12 )
+[sub_resource type="SphereMesh" id=37]
+material = SubResource( 36 )
 flip_faces = true
 radius = 128.0
 height = 100.0
 is_hemisphere = true
 
-[sub_resource type="StyleBoxEmpty" id=14]
-
-[sub_resource type="StyleBoxEmpty" id=15]
-
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="GDScript" id=17]
-script/source = "extends Button
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	self.grab_focus()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[sub_resource type="StyleBoxEmpty" id=18]
-
-[sub_resource type="StyleBoxEmpty" id=19]
-
-[sub_resource type="StyleBoxEmpty" id=20]
-
-[sub_resource type="StyleBoxEmpty" id=21]
-
-[sub_resource type="StyleBoxEmpty" id=22]
-
-[sub_resource type="StyleBoxEmpty" id=23]
-
-[sub_resource type="StyleBoxEmpty" id=24]
-
-[sub_resource type="StyleBoxEmpty" id=25]
-
-[sub_resource type="StyleBoxEmpty" id=26]
-
-[sub_resource type="StyleBoxEmpty" id=27]
-
-[sub_resource type="StyleBoxEmpty" id=28]
-
-[sub_resource type="StyleBoxEmpty" id=29]
-
-[sub_resource type="StyleBoxEmpty" id=30]
-
-[sub_resource type="StyleBoxEmpty" id=31]
-
-[sub_resource type="StyleBoxFlat" id=32]
-bg_color = Color( 0, 0, 0, 0.384314 )
-
-[sub_resource type="StyleBoxEmpty" id=33]
-
-[sub_resource type="StyleBoxEmpty" id=34]
-
-[sub_resource type="StyleBoxEmpty" id=35]
-
-[sub_resource type="StyleBoxEmpty" id=36]
-
-[sub_resource type="StyleBoxEmpty" id=37]
-
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Background" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Lava" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="Lava2" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="Lava3" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 500 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="Lava4" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 500 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="AmbientLava" type="AudioStreamPlayer" parent="Background"]
-stream = ExtResource( 3 )
-autoplay = true
-
-[node name="Stars" type="MeshInstance" parent="Background"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110, 0 )
-mesh = SubResource( 13 )
-material/0 = null
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Background"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2, 0 )
-
-[node name="Menu Camera" type="Camera" parent="."]
-transform = Transform( -0.707107, -0.0616284, -0.704416, 0, 0.996195, -0.0871557, 0.707107, -0.0616284, -0.704416, -8, 5, -4 )
-environment = ExtResource( 5 )
-doppler_tracking = 1
-current = true
-fov = 79.0
-far = 798.8
-
-[node name="Game Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-008, -0.0871557, -0.996195, 0, 0.996195, -0.0871557, 1, -3.8097e-009, -4.35451e-008, -20, 7, 0 )
-environment = ExtResource( 5 )
-doppler_tracking = 1
-near = 0.01
-far = 2807.8
-
 [node name="Tower" type="GridMap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh_library = ExtResource( 6 )
+mesh_library = ExtResource( 2 )
 cell_octant_size = 2
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PoolIntArray( 1, 0, 1441795, 65535, 0, 1048578, -131072, 0, 1048577, -131071, 0, 1441795, -65537, 0, 537919490, 131072, 1, 1179648, -65536, 2, 1441792, -131072, 3, 1441792, -131072, 65533, 1048576, 0, 65534, 1441792, 0, 65535, 1048576, -65536, 65535, 1441793 )
+"cells": PoolIntArray( 1, 0, 538312707, 65535, 0, 537919490, -131072, 0, 537919489, -131071, 0, 1441795, -65537, 0, 537919490, 131072, 1, 538050560, -65536, 2, 538312704, -131072, 3, 1441792, -131072, 65533, 1048576, 0, 65534, 1441792, 0, 65535, 1048576, -65536, 65535, 1441793 )
 }
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 0, 0 )
+"_editor_floor_": Vector3( 0, 4, 0 )
 }
-
-[node name="Wizard" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -1.75, 3.25, 0 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-script = ExtResource( 8 )
+script = ExtResource( 3 )
 
 [node name="Main Menu" type="VBoxContainer" parent="Control"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -312,7 +260,7 @@ alignment = 1
 margin_top = 110.0
 margin_right = 400.0
 margin_bottom = 177.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 text = "NAME PENDING"
 align = 1
 
@@ -324,17 +272,17 @@ focus_neighbour_top = NodePath("../Exit Button")
 focus_neighbour_bottom = NodePath("../Options Button")
 focus_next = NodePath("../Options Button")
 focus_previous = NodePath("../Exit Button")
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
 custom_colors/font_color_pressed = Color( 0.458824, 0.180392, 0.227451, 1 )
 text = "PLAY"
 flat = true
-script = SubResource( 17 )
+script = SubResource( 4 )
 
 [node name="Options Button" type="Button" parent="Control/Main Menu"]
 margin_top = 277.0
@@ -344,10 +292,10 @@ focus_neighbour_top = NodePath("../Play Button")
 focus_neighbour_bottom = NodePath("../Credits Button")
 focus_next = NodePath("../Credits Button")
 focus_previous = NodePath("../Play Button")
-custom_styles/hover = SubResource( 18 )
-custom_styles/pressed = SubResource( 19 )
-custom_styles/focus = SubResource( 20 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -363,10 +311,10 @@ focus_neighbour_top = NodePath("../Options Button")
 focus_neighbour_bottom = NodePath("../Exit Button")
 focus_next = NodePath("../Exit Button")
 focus_previous = NodePath("../Options Button")
-custom_styles/hover = SubResource( 21 )
-custom_styles/pressed = SubResource( 22 )
-custom_styles/focus = SubResource( 23 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -382,10 +330,10 @@ focus_neighbour_top = NodePath("../Credits Button")
 focus_neighbour_bottom = NodePath("../Play Button")
 focus_next = NodePath("../Play Button")
 focus_previous = NodePath(".")
-custom_styles/hover = SubResource( 24 )
-custom_styles/pressed = SubResource( 25 )
-custom_styles/focus = SubResource( 26 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -394,6 +342,7 @@ text = "EXIT"
 flat = true
 
 [node name="Credits" type="VBoxContainer" parent="Control"]
+editor/display_folded = true
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -413,7 +362,7 @@ alignment = 1
 margin_top = 55.0
 margin_right = 400.0
 margin_bottom = 105.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 5 )
 text = "CREDITS"
 align = 1
 
@@ -433,7 +382,7 @@ dragger_visibility = 2
 [node name="Game Designer Label" type="Label" parent="Control/Credits/Game Designer Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Design"
 
@@ -441,7 +390,7 @@ text = "Game Design"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kerrigan Fairbairn"
 align = 2
@@ -456,7 +405,7 @@ dragger_visibility = 2
 [node name="Gameplay Engineer Label" type="Label" parent="Control/Credits/Gameplay Engineer Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Gameplay Engineer"
 
@@ -464,7 +413,7 @@ text = "Gameplay Engineer"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Potato"
 align = 2
@@ -478,7 +427,7 @@ dragger_visibility = 2
 [node name="Music and Sounds Label" type="Label" parent="Control/Credits/Music and Sounds Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Music and Sounds"
 
@@ -486,9 +435,9 @@ text = "Music and Sounds"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Caitlyn Fairbairn"
+text = "Caitlyn Liashenko"
 align = 2
 
 [node name="Spacer Bottom" type="VSplitContainer" parent="Control/Credits"]
@@ -501,10 +450,10 @@ dragger_visibility = 2
 margin_top = 489.0
 margin_right = 400.0
 margin_bottom = 545.0
-custom_styles/hover = SubResource( 24 )
-custom_styles/pressed = SubResource( 25 )
-custom_styles/focus = SubResource( 26 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -513,6 +462,7 @@ text = "BACK"
 flat = true
 
 [node name="Options Menu" type="VBoxContainer" parent="Control"]
+editor/display_folded = true
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -532,7 +482,7 @@ alignment = 1
 margin_top = 124.0
 margin_right = 400.0
 margin_bottom = 174.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 5 )
 text = "OPTIONS"
 align = 1
 
@@ -546,7 +496,7 @@ dragger_visibility = 2
 [node name="Fullscreen Label" type="Label" parent="Control/Options Menu/Fullscreen Container"]
 margin_right = 240.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Fullscreen"
 
@@ -558,12 +508,12 @@ focus_neighbour_top = NodePath("../../Options Back Button")
 focus_neighbour_bottom = NodePath("../../Borderless Container/Borderless Toggle")
 focus_next = NodePath("../../Borderless Container/Borderless Toggle")
 focus_previous = NodePath("../../Options Back Button")
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/disabled = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -582,7 +532,7 @@ dragger_visibility = 2
 [node name="Borderless Label" type="Label" parent="Control/Options Menu/Borderless Container"]
 margin_right = 245.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Borderless"
 
@@ -594,12 +544,12 @@ focus_neighbour_top = NodePath("../../Fullscreen Container/Fullscreen Toggle")
 focus_neighbour_bottom = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_next = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_previous = NodePath("../../Fullscreen Container/Fullscreen Toggle")
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/disabled = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -618,7 +568,7 @@ dragger_visibility = 2
 [node name="V-Sync Label" type="Label" parent="Control/Options Menu/V-Sync Container"]
 margin_right = 189.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "V-Sync"
 
@@ -630,12 +580,12 @@ focus_neighbour_top = NodePath("../../Borderless Container/Borderless Toggle")
 focus_neighbour_bottom = NodePath("../../Volume Container/Volume Button")
 focus_next = NodePath("../../Volume Container/Volume Button")
 focus_previous = NodePath("../../Borderless Container/Borderless Toggle")
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/disabled = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -654,7 +604,7 @@ dragger_visibility = 2
 [node name="Volume Label" type="Label" parent="Control/Options Menu/Volume Container"]
 margin_right = 202.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Volume"
 
@@ -666,12 +616,12 @@ focus_neighbour_top = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_neighbour_bottom = NodePath("../../Options Back Button")
 focus_next = NodePath("../../Options Back Button")
 focus_previous = NodePath("../../V-Sync Container/V-Sync Toggle")
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/disabled = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = ExtResource( 11 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -688,10 +638,10 @@ focus_neighbour_top = NodePath("../Volume Container/Volume Button")
 focus_neighbour_bottom = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_next = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_previous = NodePath("../Volume Container/Volume Button")
-custom_styles/hover = SubResource( 24 )
-custom_styles/pressed = SubResource( 25 )
-custom_styles/focus = SubResource( 26 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -701,10 +651,11 @@ flat = true
 
 [node name="Pause Panel" type="Panel" parent="Control"]
 pause_mode = 2
+editor/display_folded = true
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_styles/panel = SubResource( 32 )
+custom_styles/panel = SubResource( 19 )
 
 [node name="Pause Menu" type="VBoxContainer" parent="Control/Pause Panel"]
 margin_right = 1024.0
@@ -715,7 +666,7 @@ alignment = 1
 margin_top = 206.0
 margin_right = 1024.0
 margin_bottom = 273.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 text = "PAUSED"
 align = 1
 valign = 1
@@ -728,12 +679,12 @@ focus_neighbour_top = NodePath("../Main Menu Button")
 focus_neighbour_bottom = NodePath("../Main Menu Button")
 focus_next = NodePath("../Main Menu Button")
 focus_previous = NodePath("../Main Menu Button")
-custom_styles/hover = SubResource( 33 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/focus = SubResource( 35 )
-custom_styles/disabled = SubResource( 36 )
-custom_styles/normal = SubResource( 37 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/disabled = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -749,12 +700,12 @@ focus_neighbour_top = NodePath("../Resume Button")
 focus_neighbour_bottom = NodePath("../Resume Button")
 focus_next = NodePath("../Resume Button")
 focus_previous = NodePath("../Resume Button")
-custom_styles/hover = SubResource( 33 )
-custom_styles/pressed = SubResource( 34 )
-custom_styles/focus = SubResource( 35 )
-custom_styles/disabled = SubResource( 36 )
-custom_styles/normal = SubResource( 37 )
-custom_fonts/font = ExtResource( 10 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/disabled = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -763,8 +714,61 @@ text = "Main Menu"
 flat = true
 
 [node name="Menu Stream Player" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource( 12 )
+stream = ExtResource( 7 )
 autoplay = true
+bus = "Volume Damping"
+
+[node name="Wizard" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -1.75, 3.25, 0 )
+
+[node name="Game Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-008, -0.0871557, -0.996195, 0, 0.996195, -0.0871557, 1, -3.8097e-009, -4.35451e-008, -20, 7, 0 )
+environment = ExtResource( 9 )
+doppler_tracking = 1
+near = 0.01
+far = 2807.8
+
+[node name="Menu Camera" type="Camera" parent="."]
+transform = Transform( -0.707107, -0.0616284, -0.704416, 0, 0.996195, -0.0871557, 0.707107, -0.0616284, -0.704416, -8, 5, -4 )
+environment = ExtResource( 9 )
+doppler_tracking = 1
+current = true
+fov = 79.0
+far = 798.8
+
+[node name="Background" type="Spatial" parent="."]
+
+[node name="Lava" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 0 )
+mesh = SubResource( 25 )
+material/0 = ExtResource( 10 )
+
+[node name="Lava2" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 0 )
+mesh = SubResource( 25 )
+material/0 = ExtResource( 10 )
+
+[node name="Lava3" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 500 )
+mesh = SubResource( 25 )
+material/0 = ExtResource( 10 )
+
+[node name="Lava4" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 500 )
+mesh = SubResource( 25 )
+material/0 = ExtResource( 10 )
+
+[node name="AmbientLava" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="Stars" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110, 0 )
+mesh = SubResource( 37 )
+material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Background"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2, 0 )
 [connection signal="pressed" from="Control/Main Menu/Play Button" to="Control" method="_on_Play_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Options Button" to="Control" method="_on_Options_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Credits Button" to="Control" method="_on_Credits_Button_pressed"]
