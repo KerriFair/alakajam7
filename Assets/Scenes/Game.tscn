@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Tower/tower_back_wall_array_mesh.mesh" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/Tower/tower_bend_arry_mesh.mesh" type="ArrayMesh" id=14]
 [ext_resource path="res://Assets/Tower/tower_straight_array_mesh.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://Assets/Scenes/Mouse_Area.gd" type="Script" id=16]
 
 [sub_resource type="PlaneMesh" id=1]
 subdivide_width = 32
@@ -232,6 +233,8 @@ extents = Vector3( 1, 2, 1 )
 [sub_resource type="BoxShape" id=41]
 extents = Vector3( 3, 1, 1 )
 
+[sub_resource type="BoxShape" id=42]
+
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
@@ -260,7 +263,6 @@ material/0 = ExtResource( 2 )
 
 [node name="AmbientLava" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource( 3 )
-autoplay = true
 
 [node name="Stars" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110, 0 )
@@ -297,6 +299,7 @@ margin_bottom = 600.0
 script = ExtResource( 7 )
 
 [node name="Main Menu" type="VBoxContainer" parent="Control"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -772,6 +775,7 @@ flat = true
 stream = ExtResource( 11 )
 
 [node name="BaseTower" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Floor" type="MeshInstance" parent="BaseTower"]
 editor/display_folded = true
@@ -921,6 +925,17 @@ shape = SubResource( 41 )
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
 mesh = ExtResource( 15 )
 material/0 = null
+
+[node name="Mouse_Area" type="Area" parent="."]
+editor/display_folded = true
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Mouse_Area"]
+transform = Transform( 0.202657, 0, 0, 0, 1869.38, 0, 0, 0, 74.3207, 0, 0, 0 )
+shape = SubResource( 42 )
+
+[node name="Position" type="Position3D" parent="Mouse_Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.41243, 0 )
 [connection signal="pressed" from="Control/Main Menu/Play Button" to="Control" method="_on_Play_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Options Button" to="Control" method="_on_Options_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Credits Button" to="Control" method="_on_Credits_Button_pressed"]

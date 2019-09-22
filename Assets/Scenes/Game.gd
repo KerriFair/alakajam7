@@ -1,35 +1,11 @@
 extends Node
 
-var playing = false
 var blocks = preload("res://Assets/Tower/tower_blocks.tscn").instance()
-var new_block
+var playing = false
+var clicking = false
 var should_lock_block = false
-
-var ortho_bases = [
-	Basis(Vector3( 1,  0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)),
-	Basis(Vector3( 0, -1, 0), Vector3(1, 0, 0), Vector3(0, 0, 1)),
-	Basis(Vector3(-1,  0, 0), Vector3(0, -1, 0), Vector3(0, 0, 1)),
-	Basis(Vector3( 0,  1, 0), Vector3(-1, 0, 0), Vector3(0, 0, 1)),
-	Basis(Vector3( 1,  0, 0), Vector3(0, 0, -1), Vector3(0, 1, 0)),
-	Basis(Vector3( 0,  0, 1), Vector3(1, 0, 0), Vector3(0, 1, 0)),
-	Basis(Vector3(-1,  0, 0), Vector3(0, 0, 1), Vector3(0, 1, 0)),
-	Basis(Vector3( 0,  0, -1), Vector3(-1, 0, 0), Vector3(0, 1, 0)),
-	Basis(Vector3( 1,  0, 0), Vector3(0, -1, 0), Vector3(0, 0, -1)),
-	Basis(Vector3( 0,  1, 0), Vector3(1, 0, 0), Vector3(0, 0, -1)),
-	Basis(Vector3(-1,  0, 0), Vector3(0, 1, 0), Vector3(0, 0, -1)),
-	Basis(Vector3( 0, -1, 0), Vector3(-1, 0, 0), Vector3(0, 0, -1)),
-	Basis(Vector3( 1,  0, 0), Vector3(0, 0, 1), Vector3(0, -1, 0)),
-	Basis(Vector3( 0,  0, -1), Vector3(1, 0, 0), Vector3(0, -1, 0)),
-	Basis(Vector3(-1,  0, 0), Vector3(0, 0, -1), Vector3(0, -1, 0)),
-	Basis(Vector3( 0,  0, 1), Vector3(-1, 0, 0), Vector3(0, -1, 0)),
-	Basis(Vector3( 0,  0, 1), Vector3(0, 1, 0), Vector3(-1, 0, 0)),
-	Basis(Vector3( 0, -1, 0), Vector3(0, 0, 1), Vector3(-1, 0, 0)),
-	Basis(Vector3( 0,  0, -1), Vector3(0, -1, 0), Vector3(-1, 0, 0)),
-	Basis(Vector3( 0,  1, 0), Vector3(0, 0, -1), Vector3(-1, 0, 0)),
-	Basis(Vector3( 0,  0, 1), Vector3(0, -1, 0), Vector3(1, 0, 0)),
-	Basis(Vector3( 0,  1, 0), Vector3(0, 0, 1), Vector3(1, 0, 0)),
-	Basis(Vector3( 0,  0, -1), Vector3(0, 1, 0), Vector3(1, 0, 0)),
-	Basis(Vector3( 0, -1, 0), Vector3(0, 0, -1), Vector3(1, 0, 0))]
+var block_is_free = false
+var new_block
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,8 +16,9 @@ func _ready():
 	end_button.connect("pressed", self, "_on_Game_Ended")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#=func _process(delta):
-#	pass
+func _process(delta):
+	if not block_is_free:
+		_spawn_block()
 
 func _input(event):
 	if event.is_action_pressed("game_pause"):
@@ -61,16 +38,11 @@ func _input(event):
 	
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == BUTTON_LEFT:
-	
-			if rand_range(0, 1) > 0.5:
-				new_block = blocks.get_node("Bent_Block").duplicate()
-			else:
-				new_block = blocks.get_node("Straight_Block").duplicate()
-				
-			add_child(new_block)
-			new_block.set_identity()
-			new_block.global_translate(Vector3(0, 20, rand_range(-6, 6)))
-			new_block.connect("sleeping_state_changed", self, "_block_is_sleeping")
+			clicking = true
+			
+	elif event is InputEventMouseButton and not event.pressed:
+			if event.button_index == BUTTON_LEFT:
+				clicking = false
 
 func _on_Game_Started():
 	print("Game started!")
@@ -82,10 +54,29 @@ func _on_Game_Ended():
 	
 func _block_is_sleeping():
 	should_lock_block = true
-	
+
+func _spawn_block():
+	if rand_range(0, 1) > 0.5:
+		new_block = blocks.get_node("Bent_Block").duplicate()
+	else:
+		new_block = blocks.get_node("Straight_Block").duplicate()
+		
+	add_child(new_block)
+	new_block.set_identity()
+	new_block.global_translate(Vector3(0, 20, rand_range(-6, 6)))
+	new_block.connect("sleeping_state_changed", self, "_block_is_sleeping")
+	block_is_free = true
+
 func _physics_process(delta):
+	
+	if block_is_free and clicking:
+		var position = get_node("Mouse_Area/Position").transform.origin
+		var force = new_block.transform.origin.direction_to(position)
+		new_block.add_central_force(force * 20)
+		
 	if should_lock_block:
 		should_lock_block = false
+		block_is_free = false
 
 		var rotation = Basis(Vector3(1,0,0), 1.5708 * floor((new_block.rotation_degrees.x + 45)/90))
 		var y = int(new_block.transform.origin.y + .5) + int(new_block.transform.origin.y + .5) % 2 - 1
