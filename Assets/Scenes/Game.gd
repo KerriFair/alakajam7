@@ -132,10 +132,13 @@ func _block_is_sleeping():
 
 func _spawn_block():
 	var tower = find_node("BaseTower")
+	var thrust = 0
 	if rand_range(0, 1) > 0.5:
 		new_block = blocks.get_node("Bent_Block").duplicate()
+		thrust = 700
 	else:
 		new_block = blocks.get_node("Straight_Block").duplicate()
+		thrust = 950
 		
 	tower.add_child(new_block)
 	new_block.set_identity()
@@ -146,7 +149,7 @@ func _spawn_block():
 	else:
 		new_block.global_translate(Vector3(0, 3, rand_range(10, 20)))
 	new_block.rotate_x(rand_range(-2, 2))
-	new_block.add_central_force(Vector3(0, 950, 0))
+	new_block.add_central_force(Vector3(0, thrust, 0))
 	new_block.add_torque(Vector3(rand_range(0, 500*dir), 0, 0))
 	new_block.connect("sleeping_state_changed", self, "_block_is_sleeping")
 	block_is_free = true
@@ -160,6 +163,17 @@ func _destroy_bottom_floor():
 		block.global_translate(Vector3(0, -2, 0))
 		
 	wizard.global_translate(Vector3(0, -2, 0))
+	
+	if wizard.translation.y > -2:
+		if wizard.translation.y <= 1:
+			get_node("Warning").pitch_scale = 1.2
+			get_node("Warning").play()
+		elif wizard.translation.y <= 3:
+			get_node("Warning").pitch_scale = 1.1
+			get_node("Warning").play()
+		elif wizard.translation.y <= 5:
+			get_node("Warning").pitch_scale = 1
+			get_node("Warning").play()
 
 func _spawn_floor(y):
 	var floor_block = blocks.get_node("Floor").duplicate()
@@ -253,7 +267,7 @@ func _physics_process(delta):
 				
 			average_height_multiplier = average_height_multiplier / average_height.size()
 			
-			get_node("Timer").wait_time = min(floor(70 / float(average_height_multiplier)), 20)
+			get_node("Timer").wait_time = min(floor(100 / float(average_height_multiplier)), 25)
 			print(get_node("Timer").wait_time)
 			
 			_spawn_floor((at_floor + 1)  * (desired_floor_height * 2) - (floor_offset * 2))

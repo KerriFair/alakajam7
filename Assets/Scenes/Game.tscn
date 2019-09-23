@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Tower/tower_back_wall_array_mesh.mesh" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/Tower/tower_bend_arry_mesh.mesh" type="ArrayMesh" id=14]
 [ext_resource path="res://Assets/Tower/tower_straight_array_mesh.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://Assets/Music/SFX/warning.wav" type="AudioStream" id=16]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -641,7 +642,6 @@ near = 0.01
 far = 2807.8
 
 [node name="Wizard" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -4, 5, -1 )
 
 [node name="CPUParticles" type="CPUParticles" parent="Wizard"]
@@ -1088,6 +1088,7 @@ flat = true
 
 [node name="Pause Panel" type="Panel" parent="Control"]
 pause_mode = 2
+editor/display_folded = true
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -1176,6 +1177,7 @@ autoplay = true
 bus = "Volume Damping"
 
 [node name="Game View" type="Control" parent="Control"]
+editor/display_folded = true
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -1460,11 +1462,16 @@ wait_time = 0.5
 [node name="Game Timer" type="Timer" parent="."]
 
 [node name="Destruction Plane" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0 )
 gravity_vec = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Destruction Plane"]
 shape = SubResource( 78 )
+
+[node name="Warning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "Volume Damping"
 [connection signal="input_event" from="Mouse_Area" to="." method="_on_Mouse_Area_input_event"]
 [connection signal="pressed" from="Control/Main Menu/Play Button" to="Control" method="_on_Play_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Options Button" to="Control" method="_on_Options_Button_pressed"]
