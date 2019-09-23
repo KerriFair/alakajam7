@@ -100,16 +100,23 @@ var transition_duration = 0.50
 var transition_type = 1
 
 func fade_in(stream_player):
-	stream_player.play()
+	if not stream_player.playing:
+		stream_player.play()
+	stop_tween(tween_out, stream_player)
 	tween_in.interpolate_property(stream_player, "volume_db", -80, 0, transition_duration / 2, transition_type, Tween.EASE_OUT, 0) 
 	tween_in.start()
 	
 func fade_out(stream_player):
 	tween_out.interpolate_property(stream_player, "volume_db", 0, -80, transition_duration * 2, transition_type, Tween.EASE_IN, 0) 
+	stop_tween(tween_in, stream_player)
 	tween_out.start()
 	
-func _on_TweenOut_tween_complted(object, key):
-	object.stop()
+func stop_tween(tween, stream_player):
+	tween.stop_all()
+	if tween == tween_out:
+		stream_player.set_volume_db(-80)
+	elif tween == tween_in:
+		stream_player.set_volume_db(0)
 	
 func _on_Game_Started():
 	print("Game started!")
