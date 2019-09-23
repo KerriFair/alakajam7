@@ -253,7 +253,7 @@ func _physics_process(delta):
 			for floor_to_check in floors_to_check:
 				floor_fill_count += floor_to_check.count(1)
 			
-			var floor_fill_percent = round((float(floor_fill_count) / 24) * 100)
+			var floor_fill_percent = round((float(floor_fill_count if floor_fill_count < 24 else floor_fill_count * 2) / 24) * 100)
 			score += (1*floor_fill_percent*multiplier)
 			find_node("Score Label").text = "Score: " + String(score)
 			
