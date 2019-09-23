@@ -1,112 +1,53 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Tower/tower_meshes.meshlib" type="MeshLibrary" id=2]
-[ext_resource path="res://Assets/Scenes/Control.gd" type="Script" id=3]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Title.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Bold.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Options.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Assets/Music/Tower_Menu.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Character/Animations/Animations.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Misc/Danger_Sky.tres" type="Environment" id=9]
-[ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=10]
-[ext_resource path="res://Assets/Floor/lava.wav" type="AudioStream" id=11]
-[ext_resource path="res://Assets/Misc/stars.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
+[ext_resource path="res://Assets/Floor/lava.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Misc/stars.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Misc/Danger_Sky.tres" type="Environment" id=5]
+[ext_resource path="res://Assets/Character/Animations/Animations.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scenes/Control.gd" type="Script" id=7]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Title.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Bold.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/UI/Fonts/Open Sans/Open_Sans_Options.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Music/Tower_Menu.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Tower/tower_platform_array_mesh.mesh" type="ArrayMesh" id=12]
+[ext_resource path="res://Assets/Tower/tower_back_wall_array_mesh.mesh" type="ArrayMesh" id=13]
+[ext_resource path="res://Assets/Tower/tower_bend_arry_mesh.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://Assets/Tower/tower_straight_array_mesh.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://Assets/Scenes/Mouse_Area.gd" type="Script" id=16]
 
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="GDScript" id=4]
-script/source = "extends Button
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	self.grab_focus()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[sub_resource type="StyleBoxEmpty" id=5]
-
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="StyleBoxEmpty" id=14]
-
-[sub_resource type="StyleBoxEmpty" id=15]
-
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="StyleBoxEmpty" id=17]
-
-[sub_resource type="StyleBoxEmpty" id=18]
-
-[sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0, 0, 0, 0.384314 )
-
-[sub_resource type="StyleBoxEmpty" id=20]
-
-[sub_resource type="StyleBoxEmpty" id=21]
-
-[sub_resource type="StyleBoxEmpty" id=22]
-
-[sub_resource type="StyleBoxEmpty" id=23]
-
-[sub_resource type="StyleBoxEmpty" id=24]
-
-[sub_resource type="PlaneMesh" id=25]
+[sub_resource type="PlaneMesh" id=1]
 subdivide_width = 32
 subdivide_depth = 32
 
-[sub_resource type="VisualShaderNodeScalarConstant" id=26]
+[sub_resource type="VisualShaderNodeScalarConstant" id=2]
 constant = 0.33
 
-[sub_resource type="VisualShaderNodeInput" id=27]
+[sub_resource type="VisualShaderNodeInput" id=3]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeTexture" id=28]
-texture = ExtResource( 12 )
+[sub_resource type="VisualShaderNodeTexture" id=4]
+texture = ExtResource( 4 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=29]
+[sub_resource type="VisualShaderNodeVectorOp" id=5]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 5, 5, 5 ) ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeColorConstant" id=30]
+[sub_resource type="VisualShaderNodeColorConstant" id=6]
 
-[sub_resource type="VisualShaderNodeInput" id=31]
+[sub_resource type="VisualShaderNodeInput" id=7]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeVectorOp" id=32]
+[sub_resource type="VisualShaderNodeVectorOp" id=8]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=33]
+[sub_resource type="VisualShaderNodeScalarOp" id=9]
 default_input_values = [ 0, 0.0, 1, 0.0025 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=34]
+[sub_resource type="VisualShaderNodeVectorCompose" id=10]
 
-[sub_resource type="VisualShader" id=35]
+[sub_resource type="VisualShader" id=11]
 code = "shader_type spatial;
 render_mode blend_add, depth_draw_never, diffuse_burley, specular_phong, unshaded, skip_vertex_transform, world_vertex_coords, ensure_correct_normals, shadows_disabled, ambient_light_disabled, vertex_lighting;
 
@@ -188,57 +129,426 @@ flags/unshaded = true
 flags/vertex_lighting = true
 flags/world_vertex_coords = true
 nodes/fragment/0/position = Vector2( 380, 180 )
-nodes/fragment/2/node = SubResource( 27 )
+nodes/fragment/2/node = SubResource( 3 )
 nodes/fragment/2/position = Vector2( -380, 180 )
-nodes/fragment/3/node = SubResource( 28 )
+nodes/fragment/3/node = SubResource( 4 )
 nodes/fragment/3/position = Vector2( 200, 40 )
-nodes/fragment/4/node = SubResource( 29 )
+nodes/fragment/4/node = SubResource( 5 )
 nodes/fragment/4/position = Vector2( -220, 140 )
-nodes/fragment/5/node = SubResource( 30 )
+nodes/fragment/5/node = SubResource( 6 )
 nodes/fragment/5/position = Vector2( 220, 340 )
-nodes/fragment/6/node = SubResource( 31 )
+nodes/fragment/6/node = SubResource( 7 )
 nodes/fragment/6/position = Vector2( -600, 260 )
-nodes/fragment/7/node = SubResource( 32 )
+nodes/fragment/7/node = SubResource( 8 )
 nodes/fragment/7/position = Vector2( -40, 200 )
-nodes/fragment/8/node = SubResource( 33 )
+nodes/fragment/8/node = SubResource( 9 )
 nodes/fragment/8/position = Vector2( -420, 260 )
-nodes/fragment/9/node = SubResource( 34 )
+nodes/fragment/9/node = SubResource( 10 )
 nodes/fragment/9/position = Vector2( -240, 260 )
-nodes/fragment/10/node = SubResource( 26 )
+nodes/fragment/10/node = SubResource( 2 )
 nodes/fragment/10/position = Vector2( 180, 260 )
 nodes/fragment/connections = PoolIntArray( 5, 0, 0, 5, 4, 0, 7, 0, 6, 0, 8, 0, 9, 0, 7, 1, 3, 0, 0, 0, 7, 0, 3, 0, 2, 0, 4, 0, 8, 0, 9, 0, 8, 0, 9, 2, 10, 0, 0, 1 )
 
-[sub_resource type="ShaderMaterial" id=36]
-shader = SubResource( 35 )
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 11 )
 
-[sub_resource type="SphereMesh" id=37]
-material = SubResource( 36 )
+[sub_resource type="SphereMesh" id=13]
+material = SubResource( 12 )
 flip_faces = true
 radius = 128.0
 height = 100.0
 is_hemisphere = true
 
+[sub_resource type="VisualShaderNodeVectorOp" id=14]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 0, 0 ) ]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=15]
+default_input_values = [ 0, Vector3( 0, 0, 1 ), 1, Vector3( 0, 0, 0 ) ]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=16]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0, 1, 0 ) ]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=17]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=18]
+
+[sub_resource type="VisualShaderNodeInput" id=19]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=20]
+function = 0
+
+[sub_resource type="VisualShaderNodeInput" id=21]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=22]
+function = 1
+
+[sub_resource type="VisualShaderNodeInput" id=23]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=24]
+function = 2
+
+[sub_resource type="VisualShaderNodeColorOp" id=25]
+
+[sub_resource type="VisualShaderNodeColorOp" id=26]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=27]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=28]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 2, 2, 2 ) ]
+operator = 4
+
+[sub_resource type="VisualShaderNodeColorOp" id=29]
+operator = 4
+
+[sub_resource type="VisualShaderNodeInput" id=30]
+input_name = "world"
+
+[sub_resource type="VisualShaderNodeTransformDecompose" id=31]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=32]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 0.1, 1 ) ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=33]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=34]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=35]
+input_name = "vertex"
+
+[sub_resource type="VisualShader" id=36]
+code = "shader_type spatial;
+
+
+
+void vertex() {
+// Input:2
+	vec3 n_out2p0;
+	n_out2p0 = VERTEX;
+
+// Output:0
+	VERTEX = n_out2p0;
+	NORMAL = n_out2p0;
+	COLOR.rgb = n_out2p0;
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Input:3
+	mat4 n_out3p0;
+	n_out3p0 = WORLD_MATRIX;
+
+// TransformDecompose:5
+	vec3 n_out5p0;
+	vec3 n_out5p1;
+	vec3 n_out5p2;
+	vec3 n_out5p3;
+	n_out5p0 = n_out3p0[0].xyz;
+	n_out5p1 = n_out3p0[1].xyz;
+	n_out5p2 = n_out3p0[2].xyz;
+	n_out5p3 = n_out3p0[3].xyz;
+
+// VectorOp:13
+	vec3 n_in13p1 = vec3(2.00000,2.00000,2.00000);
+	vec3 n_out13p0;
+	n_out13p0 = mod( n_out5p3 , n_in13p1 );
+
+// VectorDecompose:12
+	float n_out12p0;
+	float n_out12p1;
+	float n_out12p2;
+	n_out12p0 = n_out13p0.x;
+	n_out12p1 = n_out13p0.y;
+	n_out12p2 = n_out13p0.z;
+
+// VectorOp:7
+	vec3 n_out7p0;
+	n_out7p0 = n_out5p3 * vec3(n_out12p2);
+
+// VectorOp:8
+	vec3 n_out8p0;
+	n_out8p0 = n_out5p3 * vec3(n_out12p1);
+
+// ColorOp:10
+	vec3 n_out10p0;
+	n_out10p0=vec3(1.0)-(vec3(1.0)-n_out7p0)*(vec3(1.0)-n_out8p0);
+
+// VectorOp:9
+	vec3 n_out9p0;
+	n_out9p0 = n_out5p3 * vec3(n_out12p0);
+
+// ColorOp:11
+	vec3 n_out11p0;
+	n_out11p0=vec3(1.0)-(vec3(1.0)-n_out8p0)*(vec3(1.0)-n_out9p0);
+
+// ColorOp:14
+	vec3 n_out14p0;
+	{
+		float base=n_out10p0.x;
+		float blend=n_out11p0.x;
+		if (base < 0.5) {
+			n_out14p0.x = 2.0 * base * blend;
+		} else {
+			n_out14p0.x = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
+		}
+	}
+	{
+		float base=n_out10p0.y;
+		float blend=n_out11p0.y;
+		if (base < 0.5) {
+			n_out14p0.y = 2.0 * base * blend;
+		} else {
+			n_out14p0.y = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
+		}
+	}
+	{
+		float base=n_out10p0.z;
+		float blend=n_out11p0.z;
+		if (base < 0.5) {
+			n_out14p0.z = 2.0 * base * blend;
+		} else {
+			n_out14p0.z = 1.0 - 2.0 * (1.0 - blend) * (1.0 - base);
+		}
+	}
+
+// Output:0
+	DIFFUSE_LIGHT = n_out14p0;
+
+}
+"
+graph_offset = Vector2( -231, 78 )
+nodes/vertex/2/node = SubResource( 35 )
+nodes/vertex/2/position = Vector2( 80, 180 )
+nodes/vertex/connections = PoolIntArray( 2, 0, 0, 0, 2, 0, 0, 1, 2, 0, 0, 6 )
+nodes/fragment/0/position = Vector2( 940, 40 )
+nodes/fragment/2/node = SubResource( 19 )
+nodes/fragment/2/position = Vector2( 60, 100 )
+nodes/fragment/3/node = SubResource( 20 )
+nodes/fragment/3/position = Vector2( 280, 100 )
+nodes/fragment/5/node = SubResource( 21 )
+nodes/fragment/5/position = Vector2( 60, 160 )
+nodes/fragment/6/node = SubResource( 22 )
+nodes/fragment/6/position = Vector2( 280, 160 )
+nodes/fragment/8/node = SubResource( 23 )
+nodes/fragment/8/position = Vector2( 60, 220 )
+nodes/fragment/9/node = SubResource( 24 )
+nodes/fragment/9/position = Vector2( 280, 220 )
+nodes/fragment/10/node = SubResource( 14 )
+nodes/fragment/10/position = Vector2( 500, 220 )
+nodes/fragment/11/node = SubResource( 15 )
+nodes/fragment/11/position = Vector2( 500, 20 )
+nodes/fragment/12/node = SubResource( 16 )
+nodes/fragment/12/position = Vector2( 500, 120 )
+nodes/fragment/13/node = SubResource( 17 )
+nodes/fragment/13/position = Vector2( 720, 60 )
+nodes/fragment/14/node = SubResource( 18 )
+nodes/fragment/14/position = Vector2( 720, 180 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 5, 0, 6, 0, 8, 0, 9, 0, 9, 0, 10, 0, 3, 0, 11, 1, 6, 0, 12, 0, 11, 0, 13, 0, 12, 0, 13, 1, 13, 0, 14, 0, 10, 0, 14, 1 )
+nodes/light/0/position = Vector2( 1280, 260 )
+nodes/light/3/node = SubResource( 30 )
+nodes/light/3/position = Vector2( 20, 160 )
+nodes/light/5/node = SubResource( 31 )
+nodes/light/5/position = Vector2( 240, 140 )
+nodes/light/7/node = SubResource( 32 )
+nodes/light/7/position = Vector2( 580, 80 )
+nodes/light/8/node = SubResource( 33 )
+nodes/light/8/position = Vector2( 580, 200 )
+nodes/light/9/node = SubResource( 34 )
+nodes/light/9/position = Vector2( 580, 320 )
+nodes/light/10/node = SubResource( 25 )
+nodes/light/10/position = Vector2( 840, 120 )
+nodes/light/11/node = SubResource( 26 )
+nodes/light/11/position = Vector2( 840, 300 )
+nodes/light/12/node = SubResource( 27 )
+nodes/light/12/position = Vector2( 320, 320 )
+nodes/light/13/node = SubResource( 28 )
+nodes/light/13/position = Vector2( 100, 300 )
+nodes/light/14/node = SubResource( 29 )
+nodes/light/14/position = Vector2( 1060, 220 )
+nodes/light/connections = PoolIntArray( 3, 0, 5, 0, 5, 3, 7, 0, 5, 3, 8, 0, 7, 0, 10, 0, 8, 0, 10, 1, 9, 0, 11, 1, 5, 3, 9, 0, 12, 0, 9, 1, 12, 1, 8, 1, 12, 2, 7, 1, 5, 3, 13, 0, 13, 0, 12, 0, 8, 0, 11, 0, 11, 0, 14, 1, 10, 0, 14, 0, 14, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=37]
+shader = SubResource( 36 )
+
+[sub_resource type="SphereMesh" id=38]
+material = SubResource( 37 )
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StyleBoxEmpty" id=39]
+
+[sub_resource type="StyleBoxEmpty" id=40]
+
+[sub_resource type="StyleBoxEmpty" id=41]
+
+[sub_resource type="GDScript" id=42]
+script/source = "extends Button
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.grab_focus()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="StyleBoxEmpty" id=43]
+
+[sub_resource type="StyleBoxEmpty" id=44]
+
+[sub_resource type="StyleBoxEmpty" id=45]
+
+[sub_resource type="StyleBoxEmpty" id=46]
+
+[sub_resource type="StyleBoxEmpty" id=47]
+
+[sub_resource type="StyleBoxEmpty" id=48]
+
+[sub_resource type="StyleBoxEmpty" id=49]
+
+[sub_resource type="StyleBoxEmpty" id=50]
+
+[sub_resource type="StyleBoxEmpty" id=51]
+
+[sub_resource type="StyleBoxEmpty" id=52]
+
+[sub_resource type="StyleBoxEmpty" id=53]
+
+[sub_resource type="StyleBoxEmpty" id=54]
+
+[sub_resource type="StyleBoxEmpty" id=55]
+
+[sub_resource type="StyleBoxEmpty" id=56]
+
+[sub_resource type="StyleBoxFlat" id=57]
+bg_color = Color( 0, 0, 0, 0.384314 )
+
+[sub_resource type="StyleBoxEmpty" id=58]
+
+[sub_resource type="StyleBoxEmpty" id=59]
+
+[sub_resource type="StyleBoxEmpty" id=60]
+
+[sub_resource type="StyleBoxEmpty" id=61]
+
+[sub_resource type="StyleBoxEmpty" id=62]
+
+[sub_resource type="ConvexPolygonShape" id=63]
+points = PoolVector3Array( -2.99407, -0.0300205, 0.943682, -0.994073, -0.0300205, 0.943682, -2.99407, -0.0372112, 0.877053, -0.994073, -0.0372112, 0.877053, 1.00593, -0.0372112, 0.877053, 1.00593, -0.0300205, 0.943682, -0.995463, -0.0548557, -0.951329, -0.994073, -0.0300205, -1.05632, -2.99545, -0.0547704, -0.944348, -2.99407, -0.0300205, -1.05632, 1.00452, -0.054941, -0.95831, 1.00593, -0.0300205, -1.05632, 3.00593, -0.0372112, 0.877053, 3.00593, -0.0300205, 0.943682, 3.67259, -0.0414802, 0.943682, 3.67259, -0.0414802, -1.05632, 3.00593, -0.0300205, -1.05632, 3.00451, -0.0550263, -0.965291, -3.66074, -0.0413827, 0.943682, -3.66074, -0.0413827, -1.05632, -6.99407, -0.0300205, -1.05632, -6.99407, 0.169979, -1.05632, -6.99543, -0.0545998, -0.930387, -6.99543, 0.185382, -0.933319, 7.00593, -0.0372112, 0.877053, 7.00593, -0.0300205, 0.943682, 7.00593, 0.202683, 0.869933, 7.00593, 0.169979, 0.943682, 7.00593, 0.109979, -0.0563178, 7.00593, 0.00997948, -0.0563178, 7.00593, 0.17717, 0.0103116, 7.00593, -0.0627242, 0.0174314, -6.99407, 0.109979, -0.0563178, -6.99407, 0.00997948, -0.0563178, -6.99263, 0.195156, -0.133383, -6.99263, -0.0448263, -0.130451, -3.66074, -0.0413827, 0.0174314, -2.99407, 0.0699795, -0.0563178, -3.65932, -0.0413827, -0.142086, -2.99266, -0.0449969, -0.144413, 3.67259, -0.0414802, 0.0174314, 3.00593, 0.0699795, -0.0563178, 3.00593, -0.0627242, 0.0174314, 3.67397, -0.0414802, -0.167682, -0.994073, 0.0699795, -0.0563178, 1.00593, 0.0699795, -0.0563178, -0.992671, -0.0450822, -0.151394, 1.00732, -0.0451674, -0.158374, 1.00593, -0.0627242, 0.0174314, 1.00593, 0.0699795, -0.0563178, -0.994073, -0.0627242, 0.0174314, -0.994073, 0.0699795, -0.0563178, -2.99407, -0.0627242, 0.0174314, 3.00731, -0.0452527, -0.165355, -3.66074, -0.516383, -0.0563178, -3.66074, -0.0413827, -1.05632, -4.32741, -0.516383, -0.0563178, -4.32741, -0.0413827, -1.05632, 4.33926, -0.51648, -0.0563178, 4.33926, -0.0414802, -1.05632, 3.67259, -0.51648, -0.0563178, 3.67259, -0.0414802, -1.05632, -4.32741, -0.991383, 0.943682, -3.66074, -0.991383, 0.943682, 3.67259, -0.99148, 0.943682, 4.33926, -0.99148, 0.943682, -6.99407, 0.202683, 0.869933, -6.99407, 0.169979, 0.943682, -6.99407, -0.0372112, 0.877053, -6.99407, -0.0300205, 0.943682, 7.00593, 0.169979, -1.05632, 7.00593, -0.0300205, -1.05632, 7.00449, 0.184785, -0.982184, 7.00449, -0.0551969, -0.979252, 7.00593, 0.00997948, -0.0563178, 7.00593, 0.109979, -0.0563178, 7.00728, -0.0454233, -0.179317, 7.00728, 0.194559, -0.182249, -6.99407, 0.00997948, -0.0563178, -6.99407, 0.109979, -0.0563178, -6.99407, -0.0627242, 0.0174314, -6.99407, 0.17717, 0.0103116, -4.32741, -0.516383, -0.0563178, -4.32741, -0.0413827, 0.943682, -4.32741, -0.991383, 0.943682, -3.65932, -0.0413827, -0.142086, -3.66074, -0.0413827, -1.05632, -3.66074, -0.516383, -0.0563178, 3.67259, -0.51648, -0.0563178, 3.67259, -0.0414802, 0.943682, 3.67259, -0.99148, 0.943682, 4.34063, -0.0414802, -0.170009, 4.33926, -0.0414802, -1.05632, 4.33926, -0.51648, -0.0563178, -3.66074, -0.0413827, 0.943682, -3.66074, -0.0413827, 0.0174314, -4.32741, -0.0413827, 0.0174314, 4.33926, -0.0414802, 0.943682, 4.33926, -0.0414802, 0.0174314, -4.32598, -0.0413827, -0.139759, -3.66074, -0.991383, 0.943682, 4.33926, -0.99148, 0.943682, 3.67259, -0.0414802, 0.0174314, 3.67397, -0.0414802, -0.167682, 3.67259, -0.0414802, -1.05632, -4.32741, -0.0413827, -1.05632, -0.995463, 0.185126, -0.974261, -0.994073, 0.169979, -1.05632, 1.00452, 0.185041, -0.981242, 1.00593, 0.169979, -1.05632, 3.00451, 0.184956, -0.988223, 3.00593, 0.169979, -1.05632, 3.67118, 0.184927, -0.983883, 3.67259, 0.169979, -1.05632, -3.66074, 0.169979, -1.05632, -2.99407, 0.169979, -1.05632, -3.66211, 0.18524, -0.944953, -2.99545, 0.185212, -0.94728, -6.99407, -0.0300205, 0.943682, -4.99407, -0.0300205, 0.943682, -6.99407, -0.0372112, 0.877053, -4.99407, -0.0372112, 0.877053, -6.99407, 0.169979, -1.05632, -4.99407, 0.169979, -1.05632, -6.99543, 0.185382, -0.933319, -4.99544, 0.185297, -0.9403, -4.99544, -0.0546851, -0.937367, -4.99407, -0.0300205, -1.05632, -6.99543, -0.0545998, -0.930387, -6.99407, -0.0300205, -1.05632, -4.32741, -0.0413827, -1.05632, 5.00593, -0.0372112, 0.877053, 5.00593, -0.0300205, 0.943682, 7.00593, -0.0372112, 0.877053, 7.00593, -0.0300205, 0.943682, 4.33926, -0.0414802, 0.943682, 7.00593, -0.0300205, -1.05632, 5.00593, -0.0300205, -1.05632, 7.00449, -0.0551969, -0.979252, 5.0045, -0.0551116, -0.972271, 5.0045, 0.184871, -0.975203, 5.00593, 0.169979, -1.05632, 7.00449, 0.184785, -0.982184, 7.00593, 0.169979, -1.05632, 4.33926, 0.169979, -1.05632, 4.33784, 0.184899, -0.979543, 5.00729, -0.045338, -0.172336, 5.00593, 0.00997948, -0.0563178, 7.00728, -0.0454233, -0.179317, 7.00593, 0.00997948, -0.0563178, 4.34063, -0.0414802, -0.170009, -4.99407, -0.0627242, 0.0174314, -4.99407, 0.00997948, -0.0563178, -6.99407, -0.0627242, 0.0174314, -6.99407, 0.00997948, -0.0563178, -4.32741, -0.0413827, 0.0174314, -4.99265, 0.195071, -0.140364, -4.99407, 0.109979, -0.0563178, -6.99263, 0.195156, -0.133383, -6.99407, 0.109979, -0.0563178, -4.32741, 0.109979, -0.0563178, -4.32598, 0.195042, -0.142691, -2.99266, 0.194985, -0.147345, -2.99407, 0.109979, -0.0563178, -3.65932, 0.195014, -0.145018, -3.66074, 0.109979, -0.0563178, 3.67259, 0.109979, -0.0563178, 3.00593, 0.109979, -0.0563178, 3.67397, 0.194701, -0.183948, 3.00731, 0.194729, -0.188287, -4.32741, -0.0413827, 0.943682, 4.33926, -0.0414802, 0.0174314, 5.00593, -0.0627242, 0.0174314, 7.00593, -0.0627242, 0.0174314, 7.00593, 0.00997948, -0.0563178, -0.992671, 0.1949, -0.174326, 1.00732, 0.194815, -0.181306, -4.32878, 0.185269, -0.942626, -4.32741, 0.169979, -1.05632, -4.32598, -0.0413827, -0.139759, -4.99265, -0.0449116, -0.137432, 4.33926, -0.0414802, -1.05632, 4.34063, 0.194672, -0.179608, 5.00729, 0.194644, -0.175268, -6.99263, -0.0448263, -0.130451, 7.00728, 0.194559, -0.182249, 5.00593, 0.109979, -0.0563178, 7.00593, 0.109979, -0.0563178, -6.99407, 0.00997948, -0.0563178, 4.33926, 0.109979, -0.0563178, 1.00593, 0.109979, -0.0563178, -0.994073, 0.109979, -0.0563178, 1.00593, 0.169979, 0.943682, 1.00593, -0.0300205, 0.943682, -0.994073, 0.169979, 0.943682, -0.994073, -0.0300205, 0.943682, 3.00593, -0.0300205, 0.943682, 3.00593, 0.169979, 0.943682, -2.99407, 0.169979, 0.943682, -2.99407, -0.0300205, 0.943682, 1.00593, 0.169979, 0.943682, 3.00593, 0.202683, 0.889933, 1.00593, 0.202683, 0.869933, -0.994073, 0.202683, 0.869933, -0.994073, 0.169979, 0.943682, -0.994073, 0.169979, -1.05632, -0.994073, -0.0300205, -1.05632, 1.00593, 0.169979, -1.05632, 1.00593, -0.0300205, -1.05632, -2.99407, -0.0300205, -1.05632, -2.99407, 0.169979, -1.05632, 3.00593, 0.169979, -1.05632, 3.00593, -0.0300205, -1.05632, 3.67259, 0.169979, 0.943682, 3.67259, 0.202683, 0.889933, 3.67259, -0.0414802, 0.943682, 3.67259, 0.169979, -1.05632, 3.67259, -0.0414802, -1.05632, -2.99407, 0.202683, 0.889933, -3.66074, 0.202683, 0.889933, -3.66074, 0.169979, 0.943682, -3.66074, -0.0413827, 0.943682, -3.66074, -0.0413827, -1.05632, -3.66074, 0.169979, -1.05632, -4.32741, -0.0413827, 0.943682, -4.99407, -0.0300205, 0.943682, -4.32741, 0.169979, 0.943682, -4.99407, 0.169979, 0.943682, -6.99407, 0.169979, 0.943682, -6.99407, -0.0300205, 0.943682, -4.99407, 0.202683, 0.889933, -6.99407, 0.202683, 0.869933, -6.99407, 0.169979, 0.943682, -4.32741, 0.202683, 0.889933, -4.32741, 0.169979, -1.05632, -4.99407, 0.169979, -1.05632, -4.32741, -0.0413827, -1.05632, -4.99407, -0.0300205, -1.05632, -6.99407, -0.0300205, -1.05632, -6.99407, 0.169979, -1.05632, 7.00593, 0.169979, 0.943682, 5.00593, 0.169979, 0.943682, 7.00593, 0.202683, 0.869933, 5.00593, 0.202683, 0.889933, 4.33926, 0.169979, 0.943682, 4.33926, -0.0414802, 0.943682, 5.00593, -0.0300205, 0.943682, 7.00593, -0.0300205, 0.943682, 7.00593, 0.169979, 0.943682, 4.33926, -0.0414802, -1.05632, 5.00593, -0.0300205, -1.05632, 4.33926, 0.169979, -1.05632, 5.00593, 0.169979, -1.05632, 7.00593, 0.169979, -1.05632, 7.00593, -0.0300205, -1.05632, 5.00593, 0.17717, 0.0303116, 5.00593, 0.109979, -0.0563178, 7.00593, 0.17717, 0.0103116, 7.00593, 0.109979, -0.0563178, 4.33926, 0.109979, -0.0563178, 4.33926, 0.17717, 0.0303116, -3.66074, 0.109979, -0.0563178, -2.99407, 0.109979, -0.0563178, -3.66074, 0.17717, 0.0303116, -2.99407, 0.17717, 0.0303116, 3.00593, 0.17717, 0.0303116, 3.00593, 0.109979, -0.0563178, 3.67259, 0.17717, 0.0303116, 3.67259, 0.109979, -0.0563178, 1.00593, 0.17717, 0.0103116, 1.00593, 0.109979, -0.0563178, -0.994073, 0.17717, 0.0103116, -0.994073, 0.109979, -0.0563178, -4.32741, 0.17717, 0.0303116, -4.99407, 0.17717, 0.0303116, 4.33926, 0.202683, 0.889933, -6.99407, 0.17717, 0.0103116, -4.99407, 0.109979, -0.0563178, -6.99407, 0.109979, -0.0563178, -4.32741, 0.109979, -0.0563178, -4.32741, -0.991383, 0.943682, -3.66074, -0.991383, 0.943682, 3.67259, -0.99148, 0.943682, 4.33926, -0.99148, 0.943682 )
+
+[sub_resource type="BoxShape" id=64]
+extents = Vector3( 1, 2, 1 )
+
+[sub_resource type="BoxShape" id=65]
+
+[sub_resource type="BoxShape" id=66]
+extents = Vector3( 3, 1, 1 )
+
+[sub_resource type="BoxShape" id=67]
+
+[sub_resource type="SphereMesh" id=68]
+
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Tower" type="GridMap" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh_library = ExtResource( 2 )
-cell_octant_size = 2
-cell_center_y = false
-cell_center_z = false
-data = {
-"cells": PoolIntArray( 1, 0, 538312707, 65535, 0, 537919490, -131072, 0, 537919489, -131071, 0, 1441795, -65537, 0, 537919490, 131072, 1, 538050560, -65536, 2, 538312704, -131072, 3, 1441792, -131072, 65533, 1048576, 0, 65534, 1441792, 0, 65535, 1048576, -65536, 65535, 1441793 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 4, 0 )
-}
+[node name="Background" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Lava" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Lava2" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Lava3" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 500 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Lava4" type="MeshInstance" parent="Background"]
+transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 500 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="AmbientLava" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource( 3 )
+
+[node name="Stars" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110, 0 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Background"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2, 0 )
+
+[node name="Menu Camera" type="Camera" parent="."]
+transform = Transform( -0.707107, -0.0616284, -0.704416, 0, 0.996195, -0.0871557, 0.707107, -0.0616284, -0.704416, -8, 3.5, -4 )
+environment = ExtResource( 5 )
+doppler_tracking = 1
+current = true
+fov = 79.0
+far = 798.8
+
+[node name="Game Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-008, -0.0871557, -0.996195, 0, 0.996195, -0.0871557, 1, -3.8097e-009, -4.35451e-008, -20, 7, 0 )
+environment = ExtResource( 5 )
+doppler_tracking = 1
+near = 0.01
+far = 2807.8
+
+[node name="Wizard" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -3.75, 1.11867, 0 )
+
+[node name="CPUParticles" type="CPUParticles" parent="Wizard"]
+transform = Transform( -0.00363011, 0.999342, -0.0360783, 0.0166547, -0.0360131, -0.999213, -0.999855, -0.00422812, -0.016513, -0.12662, 2.85202, -0.131917 )
+amount = 60
+lifetime = 2.05
+preprocess = 32.1
+speed_scale = 7.81
+randomness = 0.04
+mesh = SubResource( 38 )
+spread = 37.36
+gravity = Vector3( 0, 0, 0 )
+initial_velocity_random = 0.21
+angular_velocity = 221.54
+angular_velocity_random = 0.89
+linear_accel = 0.6
+linear_accel_random = 0.18
+damping = 1.0
+angle = -2.5
+angle_random = 0.66
+scale_amount = 2.0
+scale_amount_random = 1.0
+hue_variation = 0.82
+hue_variation_random = 0.99
+anim_speed = 36.36
+anim_speed_random = 0.34
+anim_offset = 0.17
 
 [node name="Control" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1024.0
 margin_bottom = 600.0
-script = ExtResource( 3 )
+script = ExtResource( 7 )
 
 [node name="Main Menu" type="VBoxContainer" parent="Control"]
 editor/display_folded = true
@@ -260,7 +570,7 @@ alignment = 1
 margin_top = 110.0
 margin_right = 400.0
 margin_bottom = 177.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 8 )
 text = "NAME PENDING"
 align = 1
 
@@ -272,17 +582,17 @@ focus_neighbour_top = NodePath("../Exit Button")
 focus_neighbour_bottom = NodePath("../Options Button")
 focus_next = NodePath("../Options Button")
 focus_previous = NodePath("../Exit Button")
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 39 )
+custom_styles/pressed = SubResource( 40 )
+custom_styles/focus = SubResource( 41 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
 custom_colors/font_color_pressed = Color( 0.458824, 0.180392, 0.227451, 1 )
 text = "PLAY"
 flat = true
-script = SubResource( 4 )
+script = SubResource( 42 )
 
 [node name="Options Button" type="Button" parent="Control/Main Menu"]
 margin_top = 277.0
@@ -292,10 +602,10 @@ focus_neighbour_top = NodePath("../Play Button")
 focus_neighbour_bottom = NodePath("../Credits Button")
 focus_next = NodePath("../Credits Button")
 focus_previous = NodePath("../Play Button")
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -311,10 +621,10 @@ focus_neighbour_top = NodePath("../Options Button")
 focus_neighbour_bottom = NodePath("../Exit Button")
 focus_next = NodePath("../Exit Button")
 focus_previous = NodePath("../Options Button")
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 46 )
+custom_styles/pressed = SubResource( 47 )
+custom_styles/focus = SubResource( 48 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -330,10 +640,10 @@ focus_neighbour_top = NodePath("../Credits Button")
 focus_neighbour_bottom = NodePath("../Play Button")
 focus_next = NodePath("../Play Button")
 focus_previous = NodePath(".")
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -362,7 +672,7 @@ alignment = 1
 margin_top = 55.0
 margin_right = 400.0
 margin_bottom = 105.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 9 )
 text = "CREDITS"
 align = 1
 
@@ -382,7 +692,7 @@ dragger_visibility = 2
 [node name="Game Designer Label" type="Label" parent="Control/Credits/Game Designer Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Design"
 
@@ -390,7 +700,7 @@ text = "Game Design"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kerrigan Fairbairn"
 align = 2
@@ -405,7 +715,7 @@ dragger_visibility = 2
 [node name="Gameplay Engineer Label" type="Label" parent="Control/Credits/Gameplay Engineer Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Gameplay Engineer"
 
@@ -413,7 +723,7 @@ text = "Gameplay Engineer"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Potato"
 align = 2
@@ -427,7 +737,7 @@ dragger_visibility = 2
 [node name="Music and Sounds Label" type="Label" parent="Control/Credits/Music and Sounds Container"]
 margin_right = 400.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Music and Sounds"
 
@@ -435,9 +745,9 @@ text = "Music and Sounds"
 margin_top = 34.0
 margin_right = 400.0
 margin_bottom = 68.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Caitlyn Liashenko"
+text = "Caitlyn Fairbairn"
 align = 2
 
 [node name="Spacer Bottom" type="VSplitContainer" parent="Control/Credits"]
@@ -450,10 +760,10 @@ dragger_visibility = 2
 margin_top = 489.0
 margin_right = 400.0
 margin_bottom = 545.0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -482,7 +792,7 @@ alignment = 1
 margin_top = 124.0
 margin_right = 400.0
 margin_bottom = 174.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 9 )
 text = "OPTIONS"
 align = 1
 
@@ -496,7 +806,7 @@ dragger_visibility = 2
 [node name="Fullscreen Label" type="Label" parent="Control/Options Menu/Fullscreen Container"]
 margin_right = 240.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Fullscreen"
 
@@ -508,12 +818,12 @@ focus_neighbour_top = NodePath("../../Options Back Button")
 focus_neighbour_bottom = NodePath("../../Borderless Container/Borderless Toggle")
 focus_next = NodePath("../../Borderless Container/Borderless Toggle")
 focus_previous = NodePath("../../Options Back Button")
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/focus = SubResource( 54 )
+custom_styles/disabled = SubResource( 55 )
+custom_styles/normal = SubResource( 56 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -532,7 +842,7 @@ dragger_visibility = 2
 [node name="Borderless Label" type="Label" parent="Control/Options Menu/Borderless Container"]
 margin_right = 245.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Borderless"
 
@@ -544,12 +854,12 @@ focus_neighbour_top = NodePath("../../Fullscreen Container/Fullscreen Toggle")
 focus_neighbour_bottom = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_next = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_previous = NodePath("../../Fullscreen Container/Fullscreen Toggle")
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/focus = SubResource( 54 )
+custom_styles/disabled = SubResource( 55 )
+custom_styles/normal = SubResource( 56 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -568,7 +878,7 @@ dragger_visibility = 2
 [node name="V-Sync Label" type="Label" parent="Control/Options Menu/V-Sync Container"]
 margin_right = 189.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "V-Sync"
 
@@ -580,12 +890,12 @@ focus_neighbour_top = NodePath("../../Borderless Container/Borderless Toggle")
 focus_neighbour_bottom = NodePath("../../Volume Container/Volume Button")
 focus_next = NodePath("../../Volume Container/Volume Button")
 focus_previous = NodePath("../../Borderless Container/Borderless Toggle")
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/focus = SubResource( 54 )
+custom_styles/disabled = SubResource( 55 )
+custom_styles/normal = SubResource( 56 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -604,7 +914,7 @@ dragger_visibility = 2
 [node name="Volume Label" type="Label" parent="Control/Options Menu/Volume Container"]
 margin_right = 202.0
 margin_bottom = 34.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Volume"
 
@@ -616,12 +926,12 @@ focus_neighbour_top = NodePath("../../V-Sync Container/V-Sync Toggle")
 focus_neighbour_bottom = NodePath("../../Options Back Button")
 focus_next = NodePath("../../Options Back Button")
 focus_previous = NodePath("../../V-Sync Container/V-Sync Toggle")
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/focus = SubResource( 54 )
+custom_styles/disabled = SubResource( 55 )
+custom_styles/normal = SubResource( 56 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -638,10 +948,10 @@ focus_neighbour_top = NodePath("../Volume Container/Volume Button")
 focus_neighbour_bottom = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_next = NodePath("../Fullscreen Container/Fullscreen Toggle")
 focus_previous = NodePath("../Volume Container/Volume Button")
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -655,7 +965,7 @@ editor/display_folded = true
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_styles/panel = SubResource( 19 )
+custom_styles/panel = SubResource( 57 )
 
 [node name="Pause Menu" type="VBoxContainer" parent="Control/Pause Panel"]
 margin_right = 1024.0
@@ -666,7 +976,7 @@ alignment = 1
 margin_top = 206.0
 margin_right = 1024.0
 margin_bottom = 273.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 8 )
 text = "PAUSED"
 align = 1
 valign = 1
@@ -679,12 +989,12 @@ focus_neighbour_top = NodePath("../Main Menu Button")
 focus_neighbour_bottom = NodePath("../Main Menu Button")
 focus_next = NodePath("../Main Menu Button")
 focus_previous = NodePath("../Main Menu Button")
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/focus = SubResource( 22 )
-custom_styles/disabled = SubResource( 23 )
-custom_styles/normal = SubResource( 24 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 58 )
+custom_styles/pressed = SubResource( 59 )
+custom_styles/focus = SubResource( 60 )
+custom_styles/disabled = SubResource( 61 )
+custom_styles/normal = SubResource( 62 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -700,12 +1010,12 @@ focus_neighbour_top = NodePath("../Resume Button")
 focus_neighbour_bottom = NodePath("../Resume Button")
 focus_next = NodePath("../Resume Button")
 focus_previous = NodePath("../Resume Button")
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/focus = SubResource( 22 )
-custom_styles/disabled = SubResource( 23 )
-custom_styles/normal = SubResource( 24 )
-custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = SubResource( 58 )
+custom_styles/pressed = SubResource( 59 )
+custom_styles/focus = SubResource( 60 )
+custom_styles/disabled = SubResource( 61 )
+custom_styles/normal = SubResource( 62 )
+custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
@@ -714,61 +1024,130 @@ text = "Main Menu"
 flat = true
 
 [node name="Menu Stream Player" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource( 7 )
-autoplay = true
-bus = "Volume Damping"
-
-[node name="Wizard" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -1.75, 3.25, 0 )
-
-[node name="Game Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-008, -0.0871557, -0.996195, 0, 0.996195, -0.0871557, 1, -3.8097e-009, -4.35451e-008, -20, 7, 0 )
-environment = ExtResource( 9 )
-doppler_tracking = 1
-near = 0.01
-far = 2807.8
-
-[node name="Menu Camera" type="Camera" parent="."]
-transform = Transform( -0.707107, -0.0616284, -0.704416, 0, 0.996195, -0.0871557, 0.707107, -0.0616284, -0.704416, -8, 5, -4 )
-environment = ExtResource( 9 )
-doppler_tracking = 1
-current = true
-fov = 79.0
-far = 798.8
-
-[node name="Background" type="Spatial" parent="."]
-
-[node name="Lava" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 0 )
-mesh = SubResource( 25 )
-material/0 = ExtResource( 10 )
-
-[node name="Lava2" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 0 )
-mesh = SubResource( 25 )
-material/0 = ExtResource( 10 )
-
-[node name="Lava3" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 500, 0, 500 )
-mesh = SubResource( 25 )
-material/0 = ExtResource( 10 )
-
-[node name="Lava4" type="MeshInstance" parent="Background"]
-transform = Transform( 250, 0, 0, 0, 200, 0, 0, 0, 250, 0, 0, 500 )
-mesh = SubResource( 25 )
-material/0 = ExtResource( 10 )
-
-[node name="AmbientLava" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource( 11 )
-autoplay = true
 
-[node name="Stars" type="MeshInstance" parent="Background"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110, 0 )
-mesh = SubResource( 37 )
+[node name="BaseTower" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Floor" type="MeshInstance" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( -2.8213e-007, 0, 1, 0, 1, 0, -1, 0, -2.8213e-007, -3, 2, -1 )
+mesh = ExtResource( 12 )
 material/0 = null
 
-[node name="DirectionalLight" type="DirectionalLight" parent="Background"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 2, 0 )
+[node name="StaticBody" type="StaticBody" parent="BaseTower/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Floor/StaticBody"]
+shape = SubResource( 63 )
+
+[node name="Back" type="MeshInstance" parent="BaseTower"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 1, -1 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="Bent_Block" type="RigidBody" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
+mode = 1
+axis_lock_linear_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Bent_Block"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 1, -1 )
+shape = SubResource( 64 )
+
+[node name="Bent_Block" type="MeshInstance" parent="BaseTower/Bent_Block"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="BaseTower/Bent_Block"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, 1 )
+shape = SubResource( 65 )
+
+[node name="Straight_Block" type="RigidBody" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5 )
+mode = 1
+axis_lock_linear_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Straight_Block"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, -1 )
+shape = SubResource( 66 )
+
+[node name="Straight_Block" type="MeshInstance" parent="BaseTower/Straight_Block"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="Straight_Block3" type="RigidBody" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5 )
+mode = 1
+axis_lock_linear_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Straight_Block3"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, -1 )
+shape = SubResource( 66 )
+
+[node name="Straight_Block" type="MeshInstance" parent="BaseTower/Straight_Block3"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="Straight_Block4" type="RigidBody" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5 )
+mode = 1
+axis_lock_linear_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Straight_Block4"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, -1 )
+shape = SubResource( 66 )
+
+[node name="Straight_Block" type="MeshInstance" parent="BaseTower/Straight_Block4"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="Straight_Block2" type="RigidBody" parent="BaseTower"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5 )
+mode = 1
+axis_lock_linear_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape" type="CollisionShape" parent="BaseTower/Straight_Block2"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, 0, -1 )
+shape = SubResource( 66 )
+
+[node name="Straight_Block" type="MeshInstance" parent="BaseTower/Straight_Block2"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -1, -1, -1 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="Mouse_Area" type="Area" parent="."]
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Mouse_Area"]
+transform = Transform( 0.202657, 0, 0, 0, 1869.38, 0, 0, 0, 74.3207, 0, 0, 0 )
+shape = SubResource( 67 )
+
+[node name="Position" type="Position3D" parent="Mouse_Area"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.41243, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Mouse_Area/Position"]
+mesh = SubResource( 68 )
+material/0 = null
 [connection signal="pressed" from="Control/Main Menu/Play Button" to="Control" method="_on_Play_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Options Button" to="Control" method="_on_Options_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Credits Button" to="Control" method="_on_Credits_Button_pressed"]
