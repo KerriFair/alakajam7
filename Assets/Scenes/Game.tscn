@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://Assets/Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Floor/lava_flow.material" type="Material" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Assets/Tower/tower_back_wall_array_mesh.mesh" type="ArrayMesh" id=13]
 [ext_resource path="res://Assets/Tower/tower_bend_arry_mesh.mesh" type="ArrayMesh" id=14]
 [ext_resource path="res://Assets/Tower/tower_straight_array_mesh.mesh" type="ArrayMesh" id=15]
-[ext_resource path="res://Assets/Scenes/Mouse_Area.gd" type="Script" id=16]
 
 [sub_resource type="PlaneMesh" id=1]
 subdivide_width = 32
@@ -1135,7 +1134,6 @@ mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="Mouse_Area" type="Area" parent="."]
-script = ExtResource( 16 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Mouse_Area"]
 transform = Transform( 0.202657, 0, 0, 0, 1869.38, 0, 0, 0, 74.3207, 0, 0, 0 )
