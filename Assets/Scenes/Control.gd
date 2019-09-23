@@ -17,7 +17,9 @@ func Switch_Menu(menu):
 		get_node("Main Menu"),
 		get_node("Credits"),
 		get_node("Options Menu"),
-		get_node("Pause Panel")
+		get_node("Pause Panel"),
+		get_node("Game Over Menu"),
+		get_node("Game View")
 	]
 	
 	for Menu in Menus:
@@ -85,7 +87,15 @@ func _on_Main_Menu_Button_pressed():
 func _on_Resume_Button_pressed():
 	get_tree().paused = false
 	find_node("Pause Panel").hide()
+	find_node("Game View").show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_Play_Button_pressed():
 	find_node("Main Menu").hide()
+#
+func _on_Main_Menu_Button3_pressed():
+	get_tree().reload_current_scene()
 
+
+func _on_Exit_To_Desktop_pressed():
+	get_tree().quit()
