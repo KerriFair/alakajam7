@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Character/Character.material" type="Material" id=1]
 [ext_resource path="res://Assets/Character/Animations/Breathing Idle-loop.anim" type="Animation" id=2]
-[ext_resource path="res://Assets/Character/Animations/Two Hand Spell Casting.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/Character/Animations/Standing.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/Character/Animations/Two Hand Spell Casting.anim" type="Animation" id=4]
+[ext_resource path="res://Assets/Character/Animations/sitting-idle-1.anim" type="Animation" id=5]
+[ext_resource path="res://Assets/Character/Animations/sitting-idle-2.anim" type="Animation" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 3.0
@@ -314,9 +317,14 @@ material/0 = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Sitting-loop"
+playback_default_blend_time = 0.3
 playback_speed = 0.33
 "anims/Breathing Idle-loop" = ExtResource( 2 )
 anims/Sitting-loop = SubResource( 4 )
-"anims/Two Hand Spell Casting" = ExtResource( 3 )
+anims/Standing = ExtResource( 3 )
+"anims/Two Hand Spell Casting" = ExtResource( 4 )
+anims/sitting-idle-1 = ExtResource( 5 )
+anims/sitting-idle-2 = ExtResource( 6 )
 "next/Breathing Idle-loop" = "Breathing Idle-loop"
-next/Sitting-loop = "Sitting-loop"
+next/Standing = "sitting-idle-1"
+next/sitting-idle-2 = "Standing"

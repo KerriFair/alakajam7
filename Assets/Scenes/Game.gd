@@ -42,7 +42,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+		
 	if not playing:
 		get_node("Mouse_Area").hide()
 	else:
@@ -82,16 +82,35 @@ func _input(event):
 			find_node("Pause Panel").hide()
 			find_node("Game View").show()
 			get_tree().paused = false	
-		
+	
 	if event.is_action_pressed("casting"):
 		clicking = true
+		fade_in(get_node("Mouse_Area/Position/AudioStreamPlayer"))
 	
 	if event.is_action_released("casting"):
 		clicking = false
+		fade_out(get_node("Mouse_Area/Position/AudioStreamPlayer"))
 			
 	if event.is_action_pressed("reset_aim"):
 		get_node("Mouse_Area/Position").translation = Vector3(0, 8.412, 0)
+	
+onready var tween_in = get_node("Mouse_Area/Position/AudioStreamPlayer/Tween2")
+onready var tween_out = get_node("Mouse_Area/Position/AudioStreamPlayer/Tween")
+var transition_duration = 0.50
+var transition_type = 1
 
+func fade_in(stream_player):
+	stream_player.play()
+	tween_in.interpolate_property(stream_player, "volume_db", -80, 0, transition_duration / 2, transition_type, Tween.EASE_OUT, 0) 
+	tween_in.start()
+	
+func fade_out(stream_player):
+	tween_out.interpolate_property(stream_player, "volume_db", 0, -80, transition_duration * 2, transition_type, Tween.EASE_IN, 0) 
+	tween_out.start()
+	
+func _on_TweenOut_tween_complted(object, key):
+	object.stop()
+	
 func _on_Game_Started():
 	print("Game started!")
 	find_node("Game Camera").current = true
@@ -318,3 +337,32 @@ func _on_Main_Menu_Button_pressed():
 	find_node("Game View").show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_on_Game_Over()
+
+#func _on_AnimationPlayer_animation_finished(anim_name):
+#	print(anim_name + " finished!")
+#	var player = get_node("Wizard/AnimationPlayer")
+#
+#	match anim_name:
+#		"Sitting-loop":
+#			var next = ["Sitting-loop", "sitting-idle-2"]
+#			var random = next[round(rand_range(0, next.size() - 1))]
+#			player.animation_set_next(anim_name, random)
+#			player.play()
+#		"sitting-idle-2":
+#			var next = ["Sitting-loop", "Standing"]
+#			var random = next[round(rand_range(0, next.size() - 1))]
+#		"Standing":
+#			var next = ["Breathing Idle-loop", "sitting-idle-1"]
+#			var random = next[round(rand_range(0, next.size() - 1))]
+#		"Breathing Idle-loop":
+#			var next = ["Breathing Idle-loop", "sitting-idle-1"]
+#			var random = next[round(rand_range(0, next.size() - 1))]
+#		"sitting-idle-1":
+#			var next = ["Sitting-loop", "sitting-idle-2"]
+#			var random = next[round(rand_range(0, next.size() - 1))]
+#			player.animation_set_next(anim_name, random)
+#
+#	var next = player.animation_get_next(anim_name)
+#	player.play(next)
+		
+		
