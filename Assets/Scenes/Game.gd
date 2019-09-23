@@ -156,6 +156,7 @@ func _spawn_block():
 	
 func _destroy_bottom_floor():
 	occupancy_grid.pop_front()
+	occupancy_grid.append([0,0,0,0,0,0,0,0])
 	floor_offset += 1
 	var blocks = get_node("BaseTower").get_children()
 	

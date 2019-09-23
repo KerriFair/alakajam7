@@ -671,7 +671,6 @@ anim_speed_random = 0.34
 anim_offset = 0.17
 
 [node name="Control" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1024.0
 margin_bottom = 600.0
 mouse_filter = 2
@@ -679,6 +678,7 @@ script = ExtResource( 7 )
 
 [node name="Main Menu" type="VBoxContainer" parent="Control"]
 editor/display_folded = true
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -779,124 +779,417 @@ text = "EXIT"
 flat = true
 
 [node name="Credits" type="VBoxContainer" parent="Control"]
-editor/display_folded = true
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -434.0
-margin_top = -600.0
-margin_right = -34.0
+margin_left = -853.0
+margin_right = -171.0
+margin_bottom = 1469.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 30
-alignment = 1
+
+[node name="Spacer Top4" type="VSplitContainer" parent="Control/Credits"]
+margin_right = 682.0
+dragger_visibility = 2
 
 [node name="Credits Header" type="Label" parent="Control/Credits"]
-margin_top = 55.0
-margin_right = 400.0
-margin_bottom = 105.0
+margin_top = 30.0
+margin_right = 682.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 9 )
 text = "CREDITS"
 align = 1
+valign = 1
 
 [node name="Spacer Top" type="VSplitContainer" parent="Control/Credits"]
-margin_top = 135.0
-margin_right = 400.0
-margin_bottom = 135.0
+margin_top = 110.0
+margin_right = 682.0
+margin_bottom = 110.0
 dragger_visibility = 2
 
-[node name="Game Designer Container" type="VSplitContainer" parent="Control/Credits"]
+[node name="Label4" type="Label" parent="Control/Credits"]
+margin_top = 140.0
+margin_right = 682.0
+margin_bottom = 190.0
+custom_fonts/font = ExtResource( 9 )
+text = "Development Team"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Credits"]
+margin_top = 220.0
+margin_right = 682.0
+margin_bottom = 292.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer"]
 editor/display_folded = true
-margin_top = 165.0
-margin_right = 400.0
-margin_bottom = 233.0
+margin_right = 682.0
+margin_bottom = 34.0
 dragger_visibility = 2
 
-[node name="Game Designer Label" type="Label" parent="Control/Credits/Game Designer Container"]
-margin_right = 400.0
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer/HSplitContainer2"]
+margin_right = 177.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Game Design"
 
-[node name="Game Designer Name" type="Label" parent="Control/Credits/Game Designer Container"]
-margin_top = 34.0
-margin_right = 400.0
-margin_bottom = 68.0
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer/HSplitContainer2"]
+margin_left = 177.0
+margin_right = 682.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kerrigan Fairbairn"
 align = 2
 
-[node name="Gameplay Engineer Container" type="VSplitContainer" parent="Control/Credits"]
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer"]
+margin_top = 38.0
+margin_right = 682.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 10 )
+text = "Jonathan Glossop"
+align = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/Credits"]
 editor/display_folded = true
-margin_top = 263.0
-margin_right = 400.0
-margin_bottom = 331.0
+margin_top = 322.0
+margin_right = 682.0
+margin_bottom = 356.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer4"]
+margin_right = 682.0
+margin_bottom = 34.0
 dragger_visibility = 2
 
-[node name="Gameplay Engineer Label" type="Label" parent="Control/Credits/Gameplay Engineer Container"]
-margin_right = 400.0
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer4/HSplitContainer2"]
+margin_right = 246.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Gameplay Engineer"
+text = "Lead Programmer"
 
-[node name="Gameplay Engineer Name" type="Label" parent="Control/Credits/Gameplay Engineer Container"]
-margin_top = 34.0
-margin_right = 400.0
-margin_bottom = 68.0
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer4/HSplitContainer2"]
+margin_left = 246.0
+margin_right = 682.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Potato"
+text = "Kerrigan Fairbairn"
 align = 2
 
-[node name="Music and Sounds Container" type="VSplitContainer" parent="Control/Credits"]
-margin_top = 361.0
-margin_right = 400.0
-margin_bottom = 429.0
+[node name="VBoxContainer5" type="VBoxContainer" parent="Control/Credits"]
+margin_top = 386.0
+margin_right = 682.0
+margin_bottom = 420.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer5"]
+margin_right = 682.0
+margin_bottom = 34.0
 dragger_visibility = 2
 
-[node name="Music and Sounds Label" type="Label" parent="Control/Credits/Music and Sounds Container"]
-margin_right = 400.0
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer5/HSplitContainer2"]
+margin_right = 309.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Music and Sounds"
+text = "Assistant Programmer"
 
-[node name="Music and Sounds Name" type="Label" parent="Control/Credits/Music and Sounds Container"]
-margin_top = 34.0
-margin_right = 400.0
-margin_bottom = 68.0
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer5/HSplitContainer2"]
+margin_left = 309.0
+margin_right = 682.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 10 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Caitlyn Fairbairn"
+text = "Jonathan Glossop"
 align = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Control/Credits"]
+margin_top = 450.0
+margin_right = 682.0
+margin_bottom = 522.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer6"]
+editor/display_folded = true
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer6/HSplitContainer2"]
+margin_right = 177.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Game Design"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer6/HSplitContainer2"]
+margin_left = 177.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Kerrigan Fairbairn"
+align = 2
+
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer6"]
+margin_top = 38.0
+margin_right = 682.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 10 )
+text = "Jonathan Glossop"
+align = 2
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 552.0
+margin_right = 682.0
+margin_bottom = 586.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer8"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer8/HSplitContainer2"]
+margin_right = 184.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Visual Design"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer8/HSplitContainer2"]
+margin_left = 184.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Kerrigan Fairbairn"
+align = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 616.0
+margin_right = 682.0
+margin_bottom = 688.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer7"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer7/HSplitContainer2"]
+margin_right = 226.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Music and Audio"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer7/HSplitContainer2"]
+margin_left = 226.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Caitlyn Liashenko"
+align = 2
+
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer7"]
+margin_top = 38.0
+margin_right = 682.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 10 )
+text = "Kerrigan Fairbairn"
+align = 2
+
+[node name="Spacer Top2" type="VSplitContainer" parent="Control/Credits"]
+margin_top = 718.0
+margin_right = 682.0
+margin_bottom = 718.0
+dragger_visibility = 2
+
+[node name="Label5" type="Label" parent="Control/Credits"]
+margin_top = 748.0
+margin_right = 682.0
+margin_bottom = 798.0
+custom_fonts/font = ExtResource( 9 )
+text = "Software and Tools"
+align = 1
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 828.0
+margin_right = 682.0
+margin_bottom = 900.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer9"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer9/HSplitContainer2"]
+margin_right = 290.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Godot 3 © 2007-2019 "
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer9/HSplitContainer2"]
+margin_left = 290.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Juan Linietsky"
+align = 2
+
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer9"]
+margin_top = 38.0
+margin_right = 682.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 10 )
+text = "Ariel Manzur"
+align = 2
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 930.0
+margin_right = 682.0
+margin_bottom = 964.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer10"]
+editor/display_folded = true
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer10/HSplitContainer2"]
+margin_right = 234.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Sibelius Ultimate"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer10/HSplitContainer2"]
+margin_left = 234.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "AVID"
+align = 2
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 994.0
+margin_right = 682.0
+margin_bottom = 1028.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer11"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer11/HSplitContainer2"]
+margin_right = 67.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Krita"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer11/HSplitContainer2"]
+margin_left = 67.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "The KDE Community"
+align = 2
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 1058.0
+margin_right = 682.0
+margin_bottom = 1092.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer12"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer12/HSplitContainer2"]
+margin_right = 301.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "FL Studio © 1998-2019"
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer12/HSplitContainer2"]
+margin_left = 301.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Image Line Software"
+align = 2
+
+[node name="Spacer Top3" type="VSplitContainer" parent="Control/Credits"]
+margin_top = 1122.0
+margin_right = 682.0
+margin_bottom = 1122.0
+dragger_visibility = 2
+
+[node name="Label6" type="Label" parent="Control/Credits"]
+margin_top = 1152.0
+margin_right = 682.0
+margin_bottom = 1202.0
+custom_fonts/font = ExtResource( 9 )
+text = "Special Thanks"
+align = 1
+
+[node name="VBoxContainer13" type="VBoxContainer" parent="Control/Credits"]
+editor/display_folded = true
+margin_top = 1232.0
+margin_right = 682.0
+margin_bottom = 1308.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="Control/Credits/VBoxContainer13"]
+margin_right = 682.0
+margin_bottom = 34.0
+dragger_visibility = 2
+
+[node name="Label2" type="Label" parent="Control/Credits/VBoxContainer13/HSplitContainer2"]
+margin_right = 212.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Alakajam Team"
+align = 2
+
+[node name="Label3" type="Label" parent="Control/Credits/VBoxContainer13/HSplitContainer2"]
+margin_left = 212.0
+margin_right = 682.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 10 )
+text = "Alakajam Team"
+align = 2
+
+[node name="Label" type="Label" parent="Control/Credits/VBoxContainer13"]
+margin_top = 38.0
+margin_right = 682.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 10 )
+text = "Contributors"
+align = 2
+
+[node name="Spacer Top4" type="VSplitContainer" parent="Control/Credits/VBoxContainer13"]
+margin_top = 76.0
+margin_right = 682.0
+margin_bottom = 76.0
+dragger_visibility = 2
+
+[node name="Spacer Bottom2" type="VSplitContainer" parent="Control/Credits"]
+margin_top = 1338.0
+margin_right = 682.0
+margin_bottom = 1338.0
+dragger_visibility = 2
+
+[node name="Label2" type="Label" parent="Control/Credits"]
+margin_top = 1368.0
+margin_right = 682.0
+margin_bottom = 1439.0
+custom_fonts/font = ExtResource( 10 )
+text = "And finally, You.
+Thank you for playing."
+align = 1
+valign = 1
 
 [node name="Spacer Bottom" type="VSplitContainer" parent="Control/Credits"]
-margin_top = 459.0
-margin_right = 400.0
-margin_bottom = 459.0
+margin_top = 1469.0
+margin_right = 682.0
+margin_bottom = 1469.0
 dragger_visibility = 2
-
-[node name="Credits Back Button" type="Button" parent="Control/Credits"]
-margin_top = 489.0
-margin_right = 400.0
-margin_bottom = 545.0
-custom_styles/hover = SubResource( 60 )
-custom_styles/pressed = SubResource( 61 )
-custom_styles/focus = SubResource( 62 )
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color_disabled = Color( 0.360784, 0.360784, 0.360784, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.94902, 0.32549, 0.427451, 1 )
-custom_colors/font_color_pressed = Color( 0.458824, 0.180392, 0.227451, 1 )
-text = "BACK"
-flat = true
 
 [node name="Options Menu" type="VBoxContainer" parent="Control"]
 editor/display_folded = true
@@ -1477,7 +1770,6 @@ bus = "Volume Damping"
 [connection signal="pressed" from="Control/Main Menu/Options Button" to="Control" method="_on_Options_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Credits Button" to="Control" method="_on_Credits_Button_pressed"]
 [connection signal="pressed" from="Control/Main Menu/Exit Button" to="Control" method="_on_Exit_Button_pressed"]
-[connection signal="pressed" from="Control/Credits/Credits Back Button" to="Control" method="_on_Credits_Back_Button_pressed"]
 [connection signal="pressed" from="Control/Options Menu/Fullscreen Container/Fullscreen Toggle" to="Control" method="_on_Fullscreen_Toggle_pressed"]
 [connection signal="pressed" from="Control/Options Menu/Borderless Container/Borderless Toggle" to="Control" method="_on_Borderless_Toggle_pressed"]
 [connection signal="pressed" from="Control/Options Menu/V-Sync Container/V-Sync Toggle" to="Control" method="_on_VSync_Toggle_pressed"]

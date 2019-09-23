@@ -1,5 +1,6 @@
 extends Control
 
+var credits_scroll = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -12,6 +13,22 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _input(event):
+	if event.is_action_pressed("ui_back") and credits_scroll == true:
+		Switch_Menu(0)
+		
+
+func _process(delta):
+	if credits_scroll:
+		var credits = get_node("Credits")
+		
+		if credits.margin_top <= -1 * (credits.get_rect().size.y + 600):
+			credits.margin_top = 0
+			credits.margin_bottom = 1469
+		else:
+			credits.margin_top -= 1
+			credits.margin_bottom -= 1
+	
 func Switch_Menu(menu):
 	var Menus = [
 		get_node("Main Menu"),
@@ -26,12 +43,16 @@ func Switch_Menu(menu):
 		Menu.hide()
 	
 	Menus[menu].show()
+	credits_scroll = false;
 	
 	match menu:
 		0: 
 			find_node("Play Button").grab_focus()
 		1:
-			find_node("Credits Back Button").grab_focus()
+			credits_scroll = true;
+			var credits = get_node("Credits")
+			credits.margin_top = 0
+			credits.margin_bottom = 1469
 		2:
 			find_node("Fullscreen Toggle").grab_focus()
 		3:
