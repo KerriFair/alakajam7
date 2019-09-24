@@ -308,6 +308,11 @@ func floor_requirements_met(floors):
 	return true
 		
 func _on_Mouse_Area_input_event(camera, event, pos, normal, shape):
+	if(event is InputEventMouseButton) and playing:
+		var position = get_node("Mouse_Area/Position")
+		position.set_identity()
+		position.global_translate(pos)
+	
 	if(event is InputEventMouseMotion) and playing:
 		var position = get_node("Mouse_Area/Position")
 		position.set_identity()

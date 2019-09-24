@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.s3tc.stex"
 path.etc2="res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.etc2.stex"
+path.etc="res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Misc/stars.png"
-dest_files=[ "res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.s3tc.stex", "res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.etc2.stex" ]
+dest_files=[ "res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.s3tc.stex", "res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.etc2.stex", "res://.import/stars.png-49ad725efd4655afea88f8bc27a3bc36.etc.stex" ]
 
 [params]
 

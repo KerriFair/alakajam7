@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.s3tc.stex"
 path.etc2="res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.etc2.stex"
+path.etc="res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Floor/lavasphere_disp.png"
-dest_files=[ "res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.s3tc.stex", "res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.etc2.stex" ]
+dest_files=[ "res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.s3tc.stex", "res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.etc2.stex", "res://.import/lavasphere_disp.png-bee325919b040943b957cd4e8b1c325a.etc.stex" ]
 
 [params]
 
