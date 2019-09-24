@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Web-DEBUG.png-06e1cb3a59e35a74b81f1509f2d75530.stex"
+path="res://.import/Web-DEBUG.png-261fe1b8f6a17f0d52c01e3716c12c4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Releases/HTML5/Debug/Web-DEBUG.png"
-dest_files=[ "res://.import/Web-DEBUG.png-06e1cb3a59e35a74b81f1509f2d75530.stex" ]
+source_file="res://docs/Web-DEBUG.png"
+dest_files=[ "res://.import/Web-DEBUG.png-261fe1b8f6a17f0d52c01e3716c12c4b.stex" ]
 
 [params]
 
